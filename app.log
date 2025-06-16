@@ -1,0 +1,23 @@
+2025/06/16 22:13:26 Failed to connect to database:cannot parse `host= user= password=xxxxx dbname= port=`: invalid port (strconv.ParseUint: parsing "": invalid syntax)
+{"time":"2025-06-16T22:28:43.572382452+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2025-06-16T22:28:43.57341185+04:00","level":"INFO","msg":"Successfully read database credentials","db_host":"interchange.proxy.rlwy.net","db_user":"postgres","db_name":"railway","db_port":"46888","db_pass":"***MASKED***"}
+{"time":"2025-06-16T22:42:42.679944446+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2025-06-16T22:42:42.681398234+04:00","level":"INFO","msg":"Successfully read database credentials","db_host":"interchange.proxy.rlwy.net","db_user":"postgres","db_name":"railway","db_port":"46888","db_pass":"***MASKED***"}
+{"time":"2025-06-16T22:44:40.555890993+04:00","level":"ERROR","msg":"ERROR: relation \"jobs\" does not exist (SQLSTATE 42P01)"}
+{"time":"2025-06-16T22:45:07.893824149+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2025-06-16T22:45:07.894857728+04:00","level":"INFO","msg":"Successfully read database credentials","db_host":"interchange.proxy.rlwy.net","db_user":"postgres","db_name":"railway","db_port":"46888","db_pass":"***MASKED***"}
+{"time":"2025-06-16T22:45:18.1578549+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2025-06-16T22:45:18.158967165+04:00","level":"INFO","msg":"Successfully read database credentials","db_host":"interchange.proxy.rlwy.net","db_user":"postgres","db_name":"railway","db_port":"46888","db_pass":"***MASKED***"}
+{"time":"2025-06-16T22:45:26.28057558+04:00","level":"ERROR","msg":"ERROR: relation \"jobs\" does not exist (SQLSTATE 42P01)"}
+{"time":"2025-06-16T22:46:44.085503895+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2025-06-16T22:46:44.086995029+04:00","level":"INFO","msg":"Successfully read database credentials","db_host":"interchange.proxy.rlwy.net","db_user":"postgres","db_name":"railway","db_port":"46888","db_pass":"***MASKED***"}
+{"time":"2025-06-16T23:01:39.416455256+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2025-06-16T23:01:39.41749112+04:00","level":"INFO","msg":"Successfully read database credentials","db_host":"interchange.proxy.rlwy.net","db_user":"postgres","db_name":"railway","db_port":"46888","db_pass":"***MASKED***"}
+{"time":"2025-06-16T23:04:19.690359752+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2025-06-16T23:04:19.691652432+04:00","level":"INFO","msg":"Successfully read database credentials","db_host":"interchange.proxy.rlwy.net","db_user":"postgres","db_name":"railway","db_port":"46888","db_pass":"***MASKED***"}
+{"time":"2025-06-16T23:04:27.400736646+04:00","level":"INFO","msg":"created new job with id: 3"}
+{"time":"2025-06-16T23:19:19.456017709+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2025-06-16T23:19:19.457619165+04:00","level":"INFO","msg":"Successfully read database credentials","db_host":"interchange.proxy.rlwy.net","db_user":"postgres","db_name":"railway","db_port":"46888","db_pass":"***MASKED***"}
+{"time":"2025-06-16T23:19:36.560848686+04:00","level":"ERROR","msg":"job not found with id: %!d(<nil>)"}
+{"time":"2025-06-16T23:20:57.567536835+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2025-06-16T23:20:57.568871001+04:00","level":"INFO","msg":"Successfully read database credentials","db_host":"interchange.proxy.rlwy.net","db_user":"postgres","db_name":"railway","db_port":"46888","db_pass":"***MASKED***"}
