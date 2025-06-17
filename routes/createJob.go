@@ -4,11 +4,29 @@ import (
 	"fmt"
 	"github.com/gofiber/fiber/v2"
 	"gorm.io/gorm"
+	"jobScheduler/handlers"
 	"jobScheduler/logger"
 	"jobScheduler/models"
+	"time"
 )
 
 func CreateJob(ctx *fiber.Ctx, db *gorm.DB) error {
+	user, ok := ctx.Locals("auth_ctx").(handlers.AuthContext)
+
+	if !ok {
+		return ctx.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
+			"success": false,
+			"error":   "Failed to parse auth context",
+		})
+	}
+
+	if user.IsAdmin != true {
+		return ctx.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
+			"success": false,
+			"error":   "User is not admin",
+		})
+	}
+
 	newJob := new(models.Job)
 
 	if err := ctx.BodyParser(newJob); err != nil {
@@ -27,6 +45,8 @@ func CreateJob(ctx *fiber.Ctx, db *gorm.DB) error {
 	}
 
 	newJob.Status = "pending"
+	newJob.CreatedAt = time.Now()
+	newJob.UserID = user.UserID
 
 	result := db.Create(&newJob)
 	if result.Error != nil {

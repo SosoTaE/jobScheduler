@@ -2,14 +2,17 @@ package main
 
 import (
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/session"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"io"
+	"jobScheduler/handlers"
 	"jobScheduler/logger"
 	"jobScheduler/models"
 	"jobScheduler/routes"
 	"log"
 	"os"
+	"time"
 )
 
 func main() {
@@ -46,9 +49,32 @@ func main() {
 	err = db.AutoMigrate(&models.Job{})
 	if err != nil {
 		logger.L.Error("Failed to migrate database:", err)
+		os.Exit(1)
 	}
 
+	err = db.AutoMigrate(&models.User{})
+	if err != nil {
+		logger.L.Error("Failed to migrate database:", err)
+		os.Exit(1)
+	}
+
+	handlers.SeedAdminUser(db, os.Getenv("ADMIN_PASSWORD"))
+
+	// --- 5. Create Session Store ---
+	store := session.New(session.Config{
+		Expiration:     24 * time.Hour,
+		CookieHTTPOnly: true,
+		CookieSameSite: "Lax",
+	})
+
 	app := fiber.New()
+
+	app.Post("/api/login", handlers.Login(db, store))
+	app.Post("/api/logout", handlers.Logout(store))
+
+	app.Use(handlers.AuthRequired(store))
+
+	app.Post("/api/register", handlers.Register(db))
 
 	app.Post("/api/create/job", func(ctx *fiber.Ctx) error {
 		return routes.CreateJob(ctx, db)
@@ -61,6 +87,12 @@ func main() {
 	app.Delete("/api/delete/job", func(ctx *fiber.Ctx) error {
 		return routes.DeleteJob(ctx, db)
 	})
+
+	app.Get("/api/jobs", func(ctx *fiber.Ctx) error {
+		return routes.ListJobs(ctx, db)
+	})
+
+	app.Get("/api/profile", routes.Profile())
 
 	app.Listen("0.0.0.0:3000")
 

@@ -5,11 +5,28 @@ import (
 	"fmt"
 	"github.com/gofiber/fiber/v2"
 	"gorm.io/gorm"
+	"jobScheduler/handlers"
 	"jobScheduler/logger"
 	"jobScheduler/models"
 )
 
 func UpdateJob(ctx *fiber.Ctx, db *gorm.DB) error {
+	user, ok := ctx.Locals("auth_ctx").(handlers.AuthContext)
+
+	if !ok {
+		return ctx.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
+			"success": false,
+			"error":   "Failed to parse auth context",
+		})
+	}
+
+	if user.IsAdmin != true {
+		return ctx.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
+			"success": false,
+			"error":   "User is not admin",
+		})
+	}
+
 	id := ctx.QueryInt("id")
 
 	var existingJob models.Job

@@ -21,3 +21,27 @@
 {"time":"2025-06-16T23:19:36.560848686+04:00","level":"ERROR","msg":"job not found with id: %!d(<nil>)"}
 {"time":"2025-06-16T23:20:57.567536835+04:00","level":"INFO","msg":"Logger initialized successfully"}
 {"time":"2025-06-16T23:20:57.568871001+04:00","level":"INFO","msg":"Successfully read database credentials","db_host":"interchange.proxy.rlwy.net","db_user":"postgres","db_name":"railway","db_port":"46888","db_pass":"***MASKED***"}
+{"time":"2025-06-17T22:47:06.786287578+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2025-06-17T22:47:06.787521432+04:00","level":"INFO","msg":"Successfully read database credentials","db_host":"interchange.proxy.rlwy.net","db_user":"postgres","db_name":"railway","db_port":"46888","db_pass":"***MASKED***"}
+{"time":"2025-06-17T22:47:10.10455746+04:00","level":"ERROR","msg":"Failed to migrate database:","!BADKEY":"ERROR: column \"password_hash\" of relation \"users\" contains null values (SQLSTATE 23502)"}
+{"time":"2025-06-17T22:47:10.270371547+04:00","level":"INFO","msg":"Admin user not found, creating one..."}
+{"time":"2025-06-17T22:47:10.569268596+04:00","level":"ERROR","msg":"FATAL: Could not seed admin user: %v","!BADKEY":"ERROR: column \"password_hash\" of relation \"users\" does not exist (SQLSTATE 42703)"}
+{"time":"2025-06-17T22:49:51.049633193+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2025-06-17T22:49:51.051135269+04:00","level":"INFO","msg":"Successfully read database credentials","db_host":"interchange.proxy.rlwy.net","db_user":"postgres","db_name":"Dispatch","db_port":"46888","db_pass":"***MASKED***"}
+{"time":"2025-06-17T22:49:52.771278329+04:00","level":"INFO","msg":"Admin user not found, creating one..."}
+{"time":"2025-06-17T22:49:53.173135268+04:00","level":"INFO","msg":"Admin user created successfully."}
+{"time":"2025-06-17T22:57:38.954870822+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2025-06-17T22:57:38.955930724+04:00","level":"INFO","msg":"Successfully read database credentials","db_host":"interchange.proxy.rlwy.net","db_user":"postgres","db_name":"Dispatch","db_port":"46888","db_pass":"***MASKED***"}
+{"time":"2025-06-17T22:57:43.471214316+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2025-06-17T22:57:52.65059954+04:00","level":"ERROR","msg":"ERROR: insert or update on table \"jobs\" violates foreign key constraint \"fk_jobs_user\" (SQLSTATE 23503)"}
+{"time":"2025-06-17T23:10:48.662417378+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2025-06-17T23:10:48.663466847+04:00","level":"INFO","msg":"Successfully read database credentials","db_host":"interchange.proxy.rlwy.net","db_user":"postgres","db_name":"Dispatch","db_port":"46888","db_pass":"***MASKED***"}
+{"time":"2025-06-17T23:10:49.94518205+04:00","level":"INFO","msg":"Admin user not found, creating one..."}
+{"time":"2025-06-17T23:10:50.254249267+04:00","level":"ERROR","msg":"FATAL: Could not seed admin user: %v","!BADKEY":"ERROR: relation \"users\" does not exist (SQLSTATE 42P01)"}
+{"time":"2025-06-17T23:11:48.018552858+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2025-06-17T23:11:48.019597873+04:00","level":"INFO","msg":"Successfully read database credentials","db_host":"interchange.proxy.rlwy.net","db_user":"postgres","db_name":"Dispatch","db_port":"46888","db_pass":"***MASKED***"}
+{"time":"2025-06-17T23:11:49.478295638+04:00","level":"INFO","msg":"Admin user not found, creating one..."}
+{"time":"2025-06-17T23:11:49.860123454+04:00","level":"INFO","msg":"Admin user created successfully."}
+{"time":"2025-06-17T23:12:14.0989561+04:00","level":"INFO","msg":"created new job with id: 1"}
+{"time":"2025-06-17T23:12:36.573304326+04:00","level":"INFO","msg":"updated the job with id: 1"}
+{"time":"2025-06-17T23:12:44.044309805+04:00","level":"ERROR","msg":"job not found with id: %!d(<nil>)"}
