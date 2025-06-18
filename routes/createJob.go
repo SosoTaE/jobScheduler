@@ -37,10 +37,19 @@ func CreateJob(ctx *fiber.Ctx, db *gorm.DB) error {
 		})
 	}
 
-	if newJob.Name == "" || newJob.Command == "" || newJob.Schedule == "" {
+	if newJob.Name == "" || newJob.Command == "" {
+		logger.L.Error("Missing required fields: name, command")
 		return ctx.Status(fiber.StatusBadRequest).JSON(fiber.Map{
 			"success": false,
-			"error":   "Missing required fields: name, command, and schedule",
+			"error":   "Missing required fields: name, command",
+		})
+	}
+
+	if err := newJob.Schedule.Validate(); err != nil {
+		logger.L.Error(err.Error())
+		return ctx.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"success": false,
+			"error":   err.Error(),
 		})
 	}
 

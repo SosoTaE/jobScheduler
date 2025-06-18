@@ -45,3 +45,61 @@
 {"time":"2025-06-17T23:12:14.0989561+04:00","level":"INFO","msg":"created new job with id: 1"}
 {"time":"2025-06-17T23:12:36.573304326+04:00","level":"INFO","msg":"updated the job with id: 1"}
 {"time":"2025-06-17T23:12:44.044309805+04:00","level":"ERROR","msg":"job not found with id: %!d(<nil>)"}
+{"time":"2025-06-18T23:28:04.03888876+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2025-06-18T23:28:04.041565135+04:00","level":"INFO","msg":"Successfully read database credentials","db_host":"interchange.proxy.rlwy.net","db_user":"postgres","db_name":"Dispatch","db_port":"46888","db_pass":"***MASKED***"}
+{"time":"2025-06-18T23:28:07.126251553+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2025-06-18T23:28:07.126494525+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2025-06-18T23:28:07.126544251+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2025-06-18T23:28:07.126556008+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2025-06-18T23:33:05.178954409+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2025-06-18T23:33:05.180459131+04:00","level":"INFO","msg":"Successfully read database credentials","db_host":"interchange.proxy.rlwy.net","db_user":"postgres","db_name":"Dispatch","db_port":"46888","db_pass":"***MASKED***"}
+{"time":"2025-06-18T23:33:09.593160757+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2025-06-18T23:33:09.59355047+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2025-06-18T23:33:09.59357052+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2025-06-18T23:33:09.593583834+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2025-06-18T23:34:01.100525235+04:00","level":"ERROR","msg":"json: cannot unmarshal string into Go struct field Job.schedule of type models.Schedule"}
+{"time":"2025-06-18T23:34:09.594963169+04:00","level":"DEBUG","msg":"Scheduler tick","time":"2025-06-18T23:34:09.593829556+04:00"}
+{"time":"2025-06-18T23:35:09.59471064+04:00","level":"DEBUG","msg":"Scheduler tick","time":"2025-06-18T23:35:09.593818688+04:00"}
+{"time":"2025-06-18T23:36:09.594092797+04:00","level":"DEBUG","msg":"Scheduler tick","time":"2025-06-18T23:36:09.593826772+04:00"}
+{"time":"2025-06-18T23:36:17.576471504+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2025-06-18T23:36:17.577540684+04:00","level":"INFO","msg":"Successfully read database credentials","db_host":"interchange.proxy.rlwy.net","db_user":"postgres","db_name":"Dispatch","db_port":"46888","db_pass":"***MASKED***"}
+{"time":"2025-06-18T23:36:22.03443918+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2025-06-18T23:36:22.034545508+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2025-06-18T23:36:22.034571514+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2025-06-18T23:36:22.034575784+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2025-06-18T23:36:32.543666164+04:00","level":"ERROR","msg":"Failed to find job with id %!s(int=1): record not found"}
+{"time":"2025-06-18T23:36:37.900330304+04:00","level":"INFO","msg":"created new job with id: 1"}
+{"time":"2025-06-18T23:37:14.293087022+04:00","level":"INFO","msg":"created new job with id: 2"}
+{"time":"2025-06-18T23:37:22.035173489+04:00","level":"DEBUG","msg":"Scheduler tick","time":"2025-06-18T23:37:22.034660506+04:00"}
+{"time":"2025-06-18T23:37:22.279948037+04:00","level":"INFO","msg":"Found pending jobs","count":2}
+{"time":"2025-06-18T23:38:22.035429289+04:00","level":"DEBUG","msg":"Scheduler tick","time":"2025-06-18T23:38:22.03466286+04:00"}
+{"time":"2025-06-18T23:38:22.19950121+04:00","level":"INFO","msg":"Found pending jobs","count":2}
+{"time":"2025-06-18T23:38:22.199573976+04:00","level":"INFO","msg":"Job queued for execution","job_id":2}
+{"time":"2025-06-18T23:38:22.199595566+04:00","level":"INFO","msg":"Worker picked up a job","worker_id":1,"job_id":2,"job_name":"This will be accepted"}
+{"time":"2025-06-18T23:38:22.555080558+04:00","level":"ERROR","msg":"Job execution failed","job_id":2,"error":"exit status 1","output":"sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper\nsudo: a password is required\n"}
+{"time":"2025-06-18T23:39:22.035077069+04:00","level":"DEBUG","msg":"Scheduler tick","time":"2025-06-18T23:39:22.034659409+04:00"}
+{"time":"2025-06-18T23:39:22.19790078+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2025-06-18T23:39:38.78138814+04:00","level":"INFO","msg":"created new job with id: 3"}
+{"time":"2025-06-18T23:40:22.035072402+04:00","level":"DEBUG","msg":"Scheduler tick","time":"2025-06-18T23:40:22.034658138+04:00"}
+{"time":"2025-06-18T23:40:22.199001083+04:00","level":"INFO","msg":"Found pending jobs","count":2}
+{"time":"2025-06-18T23:40:22.199048515+04:00","level":"INFO","msg":"Job queued for execution","job_id":3}
+{"time":"2025-06-18T23:40:22.199057936+04:00","level":"INFO","msg":"Worker picked up a job","worker_id":3,"job_id":3,"job_name":"This will be accepted"}
+{"time":"2025-06-18T23:40:22.444662271+04:00","level":"INFO","msg":"Job execution succeeded","job_id":3,"output":""}
+{"time":"2025-06-18T23:41:22.035234198+04:00","level":"DEBUG","msg":"Scheduler tick","time":"2025-06-18T23:41:22.034662524+04:00"}
+{"time":"2025-06-18T23:41:22.198784587+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2025-06-18T23:42:22.03567053+04:00","level":"DEBUG","msg":"Scheduler tick","time":"2025-06-18T23:42:22.034654135+04:00"}
+{"time":"2025-06-18T23:42:22.199355734+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2025-06-18T23:43:22.034955078+04:00","level":"DEBUG","msg":"Scheduler tick","time":"2025-06-18T23:43:22.034663229+04:00"}
+{"time":"2025-06-18T23:43:22.200008649+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2025-06-18T23:44:22.035214587+04:00","level":"DEBUG","msg":"Scheduler tick","time":"2025-06-18T23:44:22.034657237+04:00"}
+{"time":"2025-06-18T23:44:22.201048543+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2025-06-18T23:45:22.035014569+04:00","level":"DEBUG","msg":"Scheduler tick","time":"2025-06-18T23:45:22.034658032+04:00"}
+{"time":"2025-06-18T23:45:22.201455661+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2025-06-18T23:46:22.034898952+04:00","level":"DEBUG","msg":"Scheduler tick","time":"2025-06-18T23:46:22.034657587+04:00"}
+{"time":"2025-06-18T23:46:22.198928457+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2025-06-18T23:47:22.035177785+04:00","level":"DEBUG","msg":"Scheduler tick","time":"2025-06-18T23:47:22.0346556+04:00"}
+{"time":"2025-06-18T23:47:22.225325226+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2025-06-18T23:48:22.035427732+04:00","level":"DEBUG","msg":"Scheduler tick","time":"2025-06-18T23:48:22.034656576+04:00"}
+{"time":"2025-06-18T23:48:22.202214742+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2025-06-18T23:49:22.035499548+04:00","level":"DEBUG","msg":"Scheduler tick","time":"2025-06-18T23:49:22.034655551+04:00"}
+{"time":"2025-06-18T23:49:22.198909618+04:00","level":"INFO","msg":"Found pending jobs","count":1}

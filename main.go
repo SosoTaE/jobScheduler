@@ -10,6 +10,7 @@ import (
 	"jobScheduler/logger"
 	"jobScheduler/models"
 	"jobScheduler/routes"
+	"jobScheduler/worker"
 	"log"
 	"os"
 	"time"
@@ -66,6 +67,15 @@ func main() {
 		CookieHTTPOnly: true,
 		CookieSameSite: "Lax",
 	})
+
+	workerConfig, err := NewWorkerConfig()
+
+	if err != nil {
+		logger.L.Error("Failed to create worker config:", err)
+		os.Exit(1)
+	}
+
+	worker.StartWorkerPool(workerConfig.Workers, workerConfig.QueueSize, db)
 
 	app := fiber.New()
 
