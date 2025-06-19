@@ -29,14 +29,11 @@ func Login(db *gorm.DB, store *session.Store) fiber.Handler {
 			return ctx.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Database error"})
 		}
 
-		// --- 2. Compare the password with the stored hash ---
 		err = bcrypt.CompareHashAndPassword([]byte(user.PasswordHash), []byte(req.Password))
 		if err != nil {
-			// Passwords do not match
 			return ctx.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"error": "Invalid username or password"})
 		}
 
-		// --- 3. Create Session ---
 		sess, err := store.Get(ctx)
 		if err != nil {
 			return ctx.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Could not create session"})
@@ -85,9 +82,9 @@ func AuthRequired(store *session.Store) fiber.Handler {
 
 		userID, ok1 := sess.Get("user_id").(uint)
 		username, ok2 := sess.Get("username").(string)
-		isAdmin, ok3 := sess.Get("is_admin").(bool)
+		isAdmin, _ := sess.Get("is_admin").(bool)
 
-		if !ok1 || !ok2 || !ok3 {
+		if !ok1 || !ok2 {
 			err = sess.Destroy()
 			if err != nil {
 				return ctx.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
@@ -135,28 +132,19 @@ func Logout(store *session.Store) fiber.Handler {
 type RegistrationRequest struct {
 	Username string `json:"username"`
 	Password string `json:"password"`
-	IsAdmin  bool   `json:"is_admin"`
 }
 
 // Register is the handler for creating a new user account.
 func Register(db *gorm.DB) fiber.Handler {
 	return func(ctx *fiber.Ctx) error {
-		user, ok := ctx.Locals("auth_ctx").(AuthContext)
-
-		if !ok {
+		auth_ctx := ctx.Locals("auth_ctx").(*AuthContext)
+		if auth_ctx.IsAdmin != true {
 			return ctx.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
 				"success": false,
-				"error":   "Failed to parse auth context",
+				"error":   "Only admin can register users",
 			})
 		}
 
-		if user.IsAdmin != true {
-			return ctx.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
-				"success": false,
-				"error":   "User is not admin",
-			})
-		}
-		// 1. Parse the request body
 		req := new(RegistrationRequest)
 		if err := ctx.BodyParser(req); err != nil {
 			return ctx.Status(fiber.StatusBadRequest).JSON(fiber.Map{
@@ -179,15 +167,11 @@ func Register(db *gorm.DB) fiber.Handler {
 			})
 		}
 
-		// 3. Check if the username already exists in the database
 		var existingUser models.User
-		// GORM returns gorm.ErrRecordNotFound if no user is found, which is what we want.
-		// If it returns nil, it means a user *was* found.
+
 		err := db.First(&existingUser, "username = ?", req.Username).Error
 		if !errors.Is(err, gorm.ErrRecordNotFound) {
-			// A user was found, or a different database error occurred.
 			if err == nil {
-				// This means a user with that username already exists.
 				return ctx.Status(fiber.StatusConflict).JSON(fiber.Map{
 					"success": false,
 					"error":   "Username already exists",
@@ -200,7 +184,6 @@ func Register(db *gorm.DB) fiber.Handler {
 			})
 		}
 
-		// 4. Hash the user's password for secure storage
 		hashedPassword, err := bcrypt.GenerateFromPassword([]byte(req.Password), bcrypt.DefaultCost)
 		if err != nil {
 			return ctx.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
@@ -209,14 +192,11 @@ func Register(db *gorm.DB) fiber.Handler {
 			})
 		}
 
-		// 5. Create the new user object
 		newUser := models.User{
 			Username:     req.Username,
 			PasswordHash: string(hashedPassword),
-			IsAdmin:      req.IsAdmin,
 		}
 
-		// 6. Save the new user to the database
 		if result := db.Create(&newUser); result.Error != nil {
 			return ctx.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
 				"success": false,

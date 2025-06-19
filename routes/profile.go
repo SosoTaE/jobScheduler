@@ -1,7 +1,6 @@
 package routes
 
 import (
-	"fmt"
 	"github.com/gofiber/fiber/v2"
 	"jobScheduler/handlers"
 )
@@ -17,14 +16,11 @@ func Profile() fiber.Handler {
 			})
 		}
 
-		message := fmt.Sprintf("Hello, %s! Your user ID is %d.", authCtx.Username, authCtx.UserID)
-		if authCtx.IsAdmin {
-			message += " You have admin privileges."
-		}
-
 		return c.Status(fiber.StatusOK).JSON(fiber.Map{
 			"success": true,
-			"message": message,
+			"data": fiber.Map{
+				"username": authCtx.Username,
+			},
 		})
 	}
 }

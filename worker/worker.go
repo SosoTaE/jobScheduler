@@ -29,18 +29,32 @@ func StartWorkerPool(poolSize int, queueSize int, db *gorm.DB) {
 
 func worker(id int, db *gorm.DB) {
 	for job := range JobQueue {
-		logger.L.Info("Worker picked up a job", "worker_id", id, "job_id", job.ID, "job_name", job.Name)
+		logger.L.Info("Worker picked up a job", "worker_id", id, "job_id", job.ID)
 
+		// Update main job status to "running"
 		db.Model(&job).Updates(map[string]interface{}{"status": "running", "last_run_at": time.Now()})
 
 		output, err := executeCommand(job.Command)
 
+		executionStatus := "succeeded"
 		if err != nil {
+			executionStatus = "failed"
 			logger.L.Error("Job execution failed", "job_id", job.ID, "error", err, "output", output)
-			db.Model(&job).Update("status", "failed")
 		} else {
 			logger.L.Info("Job execution succeeded", "job_id", job.ID, "output", output)
-			db.Model(&job).Update("status", "succeeded")
+		}
+
+		db.Model(&job).Update("status", executionStatus)
+
+		// Create the detailed execution record
+		executionRecord := models.JobExecution{
+			JobID:      job.ID,
+			Status:     executionStatus,
+			Output:     output,
+			FinishedAt: time.Now(),
+		}
+		if result := db.Create(&executionRecord); result.Error != nil {
+			logger.L.Error("Failed to save job execution history", "job_id", job.ID, "error", result.Error)
 		}
 	}
 }
@@ -56,11 +70,10 @@ func executeCommand(command string) (string, error) {
 }
 
 func schedulerTicker(db *gorm.DB) {
-	ticker := time.NewTicker(1 * time.Minute)
+	ticker := time.NewTicker(1 * time.Second)
 	defer ticker.Stop()
 
 	for t := range ticker.C {
-		logger.L.Debug("Scheduler tick", "time", t)
 
 		var pendingJobs []models.Job
 		db.Where("status = ?", "pending").Find(&pendingJobs)

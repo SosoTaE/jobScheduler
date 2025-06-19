@@ -1,6 +1,7 @@
-package main
+package config
 
 import (
+	"errors"
 	"fmt"
 	"github.com/joho/godotenv"
 	"jobScheduler/logger"
@@ -8,42 +9,31 @@ import (
 	"strconv"
 )
 
-type DatabaseCredential struct {
-	DB_HOST string
-	DB_USER string
-	DB_PASS string
-	DB_NAME string
-	DB_PORT string
+type AdminCredential struct {
+	Username string
+	Password string
 }
 
-func (c *DatabaseCredential) readENV() error {
+func GetAdminCredential() (AdminCredential, error) {
 	if err := godotenv.Load(); err != nil {
-		return err
+		return AdminCredential{}, err
 	}
-	c.DB_HOST = os.Getenv("DB_HOST")
-	c.DB_USER = os.Getenv("DB_USER")
-	c.DB_PASS = os.Getenv("DB_PASSWORD") // Reads from DB_PASSWORD
-	c.DB_NAME = os.Getenv("DB_NAME")
-	c.DB_PORT = os.Getenv("DB_PORT")
 
-	logger.L.Info("Successfully read database credentials",
-		"db_host", c.DB_HOST,
-		"db_user", c.DB_USER,
-		"db_name", c.DB_NAME,
-		"db_port", c.DB_PORT,
-		"db_pass", "***MASKED***", // NEVER LOG THE REAL PASSWORD
-	)
+	adminCredential := AdminCredential{}
 
-	return nil
+	adminCredential.Username = os.Getenv("ADMIN_PASSWORD")
+	if adminCredential.Username == "" {
+		return adminCredential, errors.New("ADMIN_PASSWORD is not set")
+	}
+
+	adminCredential.Password = os.Getenv("ADMIN_PASSWORD")
+	if adminCredential.Password == "" {
+		return adminCredential, errors.New("ADMIN_PASSWORD is not set")
+	}
+
+	return adminCredential, nil
 }
 
-func (c *DatabaseCredential) ConnectionString() string {
-	return fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s",
-		c.DB_HOST, c.DB_USER, c.DB_PASS, c.DB_NAME, c.DB_PORT)
-}
-
-// WorkerConfig holds the configuration for the concurrent worker pool.
-// The name is changed from 'Threading' to be more idiomatic to Go's concurrency model.
 type WorkerConfig struct {
 	QueueSize int
 	Workers   int

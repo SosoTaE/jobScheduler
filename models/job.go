@@ -10,14 +10,11 @@ import (
 	"gorm.io/gorm"
 )
 
-// ScheduleTime represents a specific time of day.
 type ScheduleTime struct {
 	Hour   int `json:"hour"`
 	Minute int `json:"minute"`
 }
 
-// Schedule defines the structured schedule for a job.
-// Schedule defines the structured schedule for a job.
 type Schedule struct {
 	Years       []int          `json:"years,omitempty"`
 	Months      []int          `json:"months,omitempty"`
@@ -72,8 +69,6 @@ func (s *Schedule) Scan(value interface{}) error {
 	return json.Unmarshal(b, &s)
 }
 
-// Job represents a scheduled task in the system.
-
 type Job struct {
 	gorm.Model
 	Name      string     `json:"name" gorm:"not null"`
@@ -82,4 +77,13 @@ type Job struct {
 	Status    string     `json:"status" gorm:"default:'pending'"`
 	LastRunAt *time.Time `json:"lastRunAt,omitempty"`
 	UserID    uint       `json:"userId"`
+}
+
+type JobExecution struct {
+	gorm.Model
+	Status     string    `json:"status"` // e.g., "succeeded" or "failed"
+	Output     string    `json:"output" gorm:"type:text"`
+	FinishedAt time.Time `json:"finishedAt"`
+	JobID      uint      `json:"jobId"`
+	Job        Job       `json:"-" gorm:"foreignKey:JobID"`
 }

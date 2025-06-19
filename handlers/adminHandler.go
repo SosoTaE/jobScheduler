@@ -3,12 +3,13 @@ package handlers
 import (
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
+	"jobScheduler/config"
 	"jobScheduler/logger"
 	"jobScheduler/models"
 	"os"
 )
 
-func SeedAdminUser(db *gorm.DB, password string) {
+func SeedAdminUser(db *gorm.DB, adminCredential config.AdminCredential) {
 	var user models.User
 	// Check if a user with username "admin" already exists
 	err := db.First(&user, "username = ?", "admin").Error
@@ -21,7 +22,7 @@ func SeedAdminUser(db *gorm.DB, password string) {
 	logger.L.Info("Admin user not found, creating one...")
 
 	// Hash the password from the environment variable
-	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
+	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(adminCredential.Password), bcrypt.DefaultCost)
 	if err != nil {
 		logger.L.Error("FATAL: Could not hash admin password for seeding: %v", err)
 		os.Exit(1)
@@ -29,7 +30,7 @@ func SeedAdminUser(db *gorm.DB, password string) {
 
 	// Create the new admin user
 	adminUser := models.User{
-		Username:     "admin",
+		Username:     adminCredential.Username,
 		PasswordHash: string(hashedPassword),
 		IsAdmin:      true,
 	}

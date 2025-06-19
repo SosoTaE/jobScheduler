@@ -3,9 +3,10 @@ package main
 import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/session"
-	"gorm.io/driver/postgres"
+	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 	"io"
+	"jobScheduler/config"
 	"jobScheduler/handlers"
 	"jobScheduler/logger"
 	"jobScheduler/models"
@@ -32,43 +33,35 @@ func main() {
 
 	log.SetOutput(multiWriter)
 
-	databaseCredential := DatabaseCredential{}
-	err = databaseCredential.readENV()
+	db, err := gorm.Open(sqlite.Open("dispatch.db"), &gorm.Config{})
 	if err != nil {
-		logger.L.Error("Failed to read database credential", err)
-	}
-
-	dsn := databaseCredential.ConnectionString()
-
-	// Open a connection to the database.
-	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
-	if err != nil {
-		logger.L.Error("Failed to connect to database:", err)
+		logger.L.Error("Failed to connect to database", "error", err)
 		os.Exit(1)
 	}
 
-	err = db.AutoMigrate(&models.Job{})
+	logger.L.Info("Database connection successful using SQLite.")
+
+	err = db.AutoMigrate(&models.Job{}, &models.User{}, &models.JobExecution{})
 	if err != nil {
-		logger.L.Error("Failed to migrate database:", err)
+		logger.L.Error("Failed to migrate tables", err)
 		os.Exit(1)
 	}
 
-	err = db.AutoMigrate(&models.User{})
+	adminCredential, err := config.GetAdminCredential()
 	if err != nil {
-		logger.L.Error("Failed to migrate database:", err)
+		logger.L.Error("Failed to get admin credential", err)
 		os.Exit(1)
 	}
 
-	handlers.SeedAdminUser(db, os.Getenv("ADMIN_PASSWORD"))
+	handlers.SeedAdminUser(db, adminCredential)
 
-	// --- 5. Create Session Store ---
 	store := session.New(session.Config{
 		Expiration:     24 * time.Hour,
 		CookieHTTPOnly: true,
 		CookieSameSite: "Lax",
 	})
 
-	workerConfig, err := NewWorkerConfig()
+	workerConfig, err := config.NewWorkerConfig()
 
 	if err != nil {
 		logger.L.Error("Failed to create worker config:", err)
@@ -79,6 +72,8 @@ func main() {
 
 	app := fiber.New()
 
+	app.Static("/", "./public")
+
 	app.Post("/api/login", handlers.Login(db, store))
 	app.Post("/api/logout", handlers.Logout(store))
 
@@ -86,23 +81,17 @@ func main() {
 
 	app.Post("/api/register", handlers.Register(db))
 
-	app.Post("/api/create/job", func(ctx *fiber.Ctx) error {
-		return routes.CreateJob(ctx, db)
-	})
+	app.Post("/api/create/job", routes.CreateJob(db))
+	app.Put("/api/update/job", routes.UpdateJob(db))
+	app.Delete("/api/delete/job", routes.DeleteJob(db))
 
-	app.Put("/api/update/job", func(ctx *fiber.Ctx) error {
-		return routes.UpdateJob(ctx, db)
-	})
-
-	app.Delete("/api/delete/job", func(ctx *fiber.Ctx) error {
-		return routes.DeleteJob(ctx, db)
-	})
-
-	app.Get("/api/jobs", func(ctx *fiber.Ctx) error {
-		return routes.ListJobs(ctx, db)
-	})
+	app.Get("/api/jobs", routes.ListJobs(db))
+	app.Get("/api/job/:id", routes.GetJobDetails(db))
+	app.Get("/api/job/:id/history", routes.ListJobHistory(db))
+	app.Get("/api/executions", routes.ListAllExecutions(db))
 
 	app.Get("/api/profile", routes.Profile())
+	app.Get("/api/users", routes.ListUsers(db))
 
 	app.Listen("0.0.0.0:3000")
 
