@@ -1,9 +1,10 @@
 package main
 
 import (
+	"github.com/glebarez/sqlite" // Pure Go SQLite driver
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/session"
-	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 	"io"
 	"jobScheduler/config"
@@ -21,11 +22,12 @@ func main() {
 
 	file, err := os.OpenFile("app.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
 	if err != nil {
-		log.Fatal(err)
+		logger.L.Error(err.Error())
+		os.Exit(1)
 	}
 	defer func() {
 		if err := file.Close(); err != nil {
-			log.Fatal(err)
+			logger.L.Error(err.Error())
 		}
 	}()
 
@@ -71,6 +73,12 @@ func main() {
 	worker.StartWorkerPool(workerConfig.Workers, workerConfig.QueueSize, db)
 
 	app := fiber.New()
+
+	// Add this CORS middleware to allow credentials from the frontend origin
+	app.Use(cors.New(cors.Config{
+		AllowOrigins:     "http://localhost:3001", // Or your frontend's actual origin
+		AllowCredentials: true,
+	}))
 
 	app.Static("/", "./public")
 
