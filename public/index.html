@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Scheduler</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Simple transition for showing/hiding pages */
+        .page { display: none; }
+        .page.active { display: block; }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+<!-- Main container where pages will be rendered -->
+<div id="app-root"></div>
+
+<!-- =========== TEMPLATES =========== -->
+
+<!-- Login Page Template -->
+<template id="login-page-template">
+    <div class="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+        <div class="w-full max-w-md">
+            <div class="bg-white shadow-md rounded-lg p-8 space-y-6">
+                <h1 class="text-3xl font-bold text-center text-gray-900">Job Scheduler</h1>
+                <form id="login-form" class="space-y-4">
+                    <input type="text" name="username" placeholder="Username" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <input type="password" name="password" placeholder="Password" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <p id="login-error" class="text-red-500 text-sm h-4"></p>
+                    <button type="submit" class="w-full px-4 py-2 rounded-md font-semibold bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200">
+                        Login
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</template>
+
+<!-- Dashboard Page Template -->
+<template id="dashboard-page-template">
+    <div class="flex h-screen bg-gray-100 text-gray-800">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white shadow-lg flex flex-col">
+            <div class="px-6 py-4 border-b">
+                <h1 class="text-2xl font-bold text-indigo-600">Job Scheduler</h1>
+            </div>
+            <nav id="main-nav" class="flex-grow p-4 space-y-2">
+                <button data-page="jobs" class="nav-link w-full text-left px-3 py-2 rounded-md transition-colors flex items-center gap-3 bg-indigo-600 text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                    <span>Jobs</span>
+                </button>
+                <button data-page="users" class="nav-link w-full text-left px-3 py-2 rounded-md transition-colors flex items-center gap-3 hover:bg-gray-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <span>Users</span>
+                </button>
+            </nav>
+            <div class="p-4 border-t space-y-4">
+                <div class="flex items-center justify-between">
+                    <span id="username-display" class="font-semibold"></span>
+                </div>
+                <button id="logout-button" class="w-full gap-2 inline-flex items-center justify-center px-4 py-2 rounded-md font-semibold bg-gray-200 text-gray-800 hover:bg-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+        <!-- Main Content Area -->
+        <main id="main-content" class="flex-1 p-6 md:p-8 overflow-y-auto">
+            <!-- Content for pages like Jobs List, Job Details, Users will be rendered here -->
+        </main>
+    </div>
+</template>
+
+<!-- Jobs List View Template -->
+<template id="jobs-list-template">
+    <div class="bg-white shadow-md rounded-lg p-6">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold">Jobs</h1>
+            <button data-action="create-job" class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-semibold bg-indigo-600 text-white hover:bg-indigo-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                Create Job
+            </button>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full table-fixed text-left">
+                <thead class="bg-gray-50">
+                <tr>
+                    <th class="p-4 w-2/5">Name</th>
+                    <th class="p-4 w-1/5">Status</th>
+                    <th class="p-4 w-1/5">Last Run</th>
+                    <th class="p-4 w-1/5 text-center">Actions</th>
+                </tr>
+                </thead>
+                <tbody id="jobs-table-body"></tbody>
+            </table>
+        </div>
+        <div id="jobs-pagination" class="flex justify-between items-center mt-4"></div>
+    </div>
+</template>
+
+<!-- User List View Template -->
+<template id="users-list-template">
+    <div class="bg-white shadow-md rounded-lg p-6">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold">User Management</h1>
+            <button data-action="register-user" class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-semibold bg-indigo-600 text-white hover:bg-indigo-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                Register User
+            </button>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full table-fixed text-left">
+                <thead class="bg-gray-50">
+                <tr>
+                    <th class="p-4 w-1/4">ID</th>
+                    <th class="p-4 w-1/2">Username</th>
+                    <th class="p-4 w-1/4">Role</th>
+                </tr>
+                </thead>
+                <tbody id="users-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+</template>
+
+<!-- Job Details View Template -->
+<template id="job-details-template">
+    <div>
+        <button data-action="back-to-jobs" class="mb-4 inline-flex items-center gap-1 px-4 py-2 rounded-md font-semibold bg-gray-200 text-gray-800 hover:bg-gray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            Back to Jobs
+        </button>
+        <div id="job-details-content" class="space-y-6"></div>
+    </div>
+</template>
+
+<!-- Modal Container -->
+<div id="modal-container" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden justify-center items-center p-4">
+    <div id="modal-content" class="bg-white rounded-lg shadow-xl w-full max-w-2xl">
+        <!-- Modal content will be injected here -->
+    </div>
+</div>
+
+
+<script>
+    // Define the base URL for the backend API
+    const BASE_URL = 'http://localhost:3000';
+
+    const api = {
+        async request(path, options = {}) {
+            // Construct the full URL for the API endpoint
+            const url = `${BASE_URL}/api${path}`;
+            const finalOptions = { ...options, credentials: 'include' };
+            try {
+                const response = await fetch(url, finalOptions);
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({ error: `HTTP error! status: ${response.status}` }));
+                    throw new Error(errorData.error);
+                }
+                if (response.status === 204 || response.headers.get("Content-Length") === "0") return { success: true };
+                return await response.json();
+            } catch (error) {
+                console.error("API request failed:", error);
+                throw error;
+            }
+        },
+        get: (path) => api.request(path, { method: 'GET'}),
+        post: (path, data) => api.request(path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }),
+        put: (path, data) => api.request(path, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }),
+        delete: (path) => api.request(path, { method: 'DELETE' }),
+    };
+
+    const state = {
+        user: null,
+        currentPage: 'login',
+        jobs: [],
+        users: [],
+        pagination: {},
+    };
+
+    const root = document.getElementById('app-root');
+    const mainContent = () => document.getElementById('main-content');
+    const modalContainer = document.getElementById('modal-container');
+
+    // --- ROUTER & RENDERING ---
+    function navigate(page) {
+        state.currentPage = page;
+        switch (page) {
+            case 'login':
+                root.innerHTML = '';
+                root.appendChild(document.getElementById('login-page-template').content.cloneNode(true));
+                document.getElementById('login-form').addEventListener('submit', handleLogin);
+                break;
+            case 'dashboard':
+                root.innerHTML = '';
+                root.appendChild(document.getElementById('dashboard-page-template').content.cloneNode(true));
+                document.getElementById('username-display').textContent = state.user.username;
+                document.getElementById('logout-button').addEventListener('click', handleLogout);
+                document.getElementById('main-nav').addEventListener('click', handleNavClick);
+                renderJobsList(); // Initially render jobs list
+                break;
+        }
+    }
+
+    async function renderJobsList(page = 1) {
+        try {
+            const data = await api.get(`/jobs?page=${page}&limit=10`);
+            state.jobs = data.data || [];
+            state.pagination = data.meta;
+
+            const template = document.getElementById('jobs-list-template').content.cloneNode(true);
+            const tbody = template.getElementById('jobs-table-body');
+            tbody.innerHTML = '';
+
+            state.jobs.forEach(job => {
+                const statusClass = job.status === 'succeeded' ? 'bg-green-100 text-green-800' : job.status === 'failed' ? 'bg-red-100 text-red-800' : 'bg-yellow-100 text-yellow-800';
+                tbody.innerHTML += `
+                        <tr class="border-b">
+                            <td class="p-4 font-medium truncate">${job.name}</td>
+                            <td class="p-4"><span class="px-2 py-1 text-xs font-semibold rounded-full ${statusClass}">${job.status}</span></td>
+                            <td class="p-4">${job.lastRunAt ? new Date(job.lastRunAt).toLocaleString() : 'N/A'}</td>
+                            <td class="p-4">
+                                <div class="flex justify-center space-x-2">
+                                    <button data-action="view-job" data-id="${job.ID}" class="px-3 py-1 text-sm font-semibold rounded-md bg-gray-200 hover:bg-gray-300">View</button>
+                                    <button data-action="edit-job" data-id="${job.ID}" class="px-3 py-1 text-sm font-semibold rounded-md bg-gray-200 hover:bg-gray-300">Edit</button>
+                                    <button data-action="delete-job" data-id="${job.ID}" class="px-3 py-1 text-sm font-semibold rounded-md bg-red-200 hover:bg-red-300">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                    `;
+            });
+
+            mainContent().innerHTML = '';
+            mainContent().appendChild(template);
+            renderPagination(document.getElementById('jobs-pagination'), 'jobs-page', renderJobsList);
+
+        } catch (error) {
+            mainContent().innerHTML = `<p class="text-red-500">Failed to load jobs.</p>`;
+        }
+    }
+
+    async function renderUsersList() {
+        try {
+            const data = await api.get('/users');
+            state.users = data.data || [];
+            const template = document.getElementById('users-list-template').content.cloneNode(true);
+            const tbody = template.getElementById('users-table-body');
+            tbody.innerHTML = '';
+            state.users.forEach(user => {
+                tbody.innerHTML += `
+                         <tr class="border-b">
+                            <td class="p-4">${user.ID}</td>
+                            <td class="p-4 font-medium">${user.username}</td>
+                            <td class="p-4">${user.isAdmin ? 'Admin' : 'User'}</td>
+                        </tr>
+                    `;
+            });
+            mainContent().innerHTML = '';
+            mainContent().appendChild(template);
+        } catch (error) {
+            mainContent().innerHTML = `<p class="text-red-500">Failed to load users.</p>`;
+        }
+    }
+
+    async function renderJobDetails(jobId) {
+        try {
+            const jobData = await api.get(`/job/${jobId}`);
+            const historyData = await api.get(`/job/${jobId}/history`);
+            const job = jobData.data;
+            const history = historyData.data || [];
+
+            const template = document.getElementById('job-details-template').content.cloneNode(true);
+            const contentDiv = template.getElementById('job-details-content');
+
+            const schedule = job.schedule;
+            const scheduleHtml = `
+                    <p><strong>Years:</strong> ${schedule.years?.join(', ') || 'Any'}</p>
+                    <p><strong>Months:</strong> ${schedule.months?.join(', ') || 'Any'}</p>
+                    <p><strong>Days of Month:</strong> ${schedule.daysOfMonth?.join(', ') || 'Any'}</p>
+                    <p><strong>Weekdays:</strong> ${schedule.weekdays?.join(', ') || 'Any'}</p>
+                    <p><strong>Times:</strong> ${schedule.times?.map(t => `${String(t.hour).padStart(2,'0')}:${String(t.minute).padStart(2,'0')}`).join(', ') || 'None'}</p>
+                `;
+
+            const historyRows = history.map(exec => {
+                const statusClass = exec.status === 'succeeded' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800';
+                return `
+                        <tr class="border-b">
+                            <td class="p-4">${new Date(exec.finishedAt).toLocaleString()}</td>
+                            <td class="p-4"><span class="px-2 py-1 text-xs font-semibold rounded-full ${statusClass}">${exec.status}</span></td>
+                            <td class="p-4"><pre class="whitespace-pre-wrap text-xs bg-gray-100 p-2 rounded">${exec.output || '(No output)'}</pre></td>
+                        </tr>
+                    `;
+            }).join('');
+
+            contentDiv.innerHTML = `
+                    <div class="bg-white shadow-md rounded-lg p-6">
+                        <h1 class="text-3xl font-bold mb-4">${job.name}</h1>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div><strong>ID:</strong> ${job.ID}</div>
+                            <div><strong>Status:</strong> ${job.status}</div>
+                            <div><strong>Command:</strong> <code class="bg-gray-200 p-1 rounded text-sm">${job.command}</code></div>
+                            <div><strong>Created:</strong> ${new Date(job.CreatedAt).toLocaleString()}</div>
+                            <div class="md:col-span-2">
+                                <strong>Schedule:</strong>
+                                <div class="mt-2 bg-gray-50 p-4 rounded-md text-sm space-y-1">${scheduleHtml}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white shadow-md rounded-lg p-6">
+                        <h2 class="text-2xl font-bold mb-4">Execution History</h2>
+                        <div class="overflow-x-auto">
+                           <table class="w-full text-left">
+                              <thead class="bg-gray-50">
+                                   <tr><th class="p-4">Finished At</th><th class="p-4">Status</th><th class="p-4">Output</th></tr>
+                              </thead>
+                              <tbody>${historyRows}</tbody>
+                           </table>
+                        </div>
+                    </div>
+                `;
+
+            mainContent().innerHTML = '';
+            mainContent().appendChild(template);
+        } catch (error) {
+            mainContent().innerHTML = `<p class="text-red-500">Failed to load job details.</p>`;
+        }
+    }
+
+    function renderPagination(container, actionPrefix, renderFn) {
+        container.innerHTML = '';
+        if (!state.pagination || !state.pagination.total_pages) return;
+
+        const { current_page, total_pages } = state.pagination;
+        if (total_pages <= 1) return;
+
+        const prevBtn = document.createElement('button');
+        prevBtn.textContent = 'Prev';
+        prevBtn.disabled = current_page === 1;
+        prevBtn.className = 'px-4 py-2 rounded-md font-semibold bg-gray-200 disabled:opacity-50';
+        prevBtn.dataset.action = `${actionPrefix}-prev`;
+        prevBtn.dataset.page = current_page - 1;
+
+        const nextBtn = document.createElement('button');
+        nextBtn.textContent = 'Next';
+        nextBtn.disabled = current_page === total_pages;
+        nextBtn.className = 'px-4 py-2 rounded-md font-semibold bg-gray-200 disabled:opacity-50';
+        nextBtn.dataset.action = `${actionPrefix}-next`;
+        nextBtn.dataset.page = current_page + 1;
+
+        const pageInfo = document.createElement('span');
+        pageInfo.textContent = `Page ${current_page} of ${total_pages}`;
+
+        container.append(prevBtn, pageInfo, nextBtn);
+    }
+
+    // --- EVENT HANDLERS ---
+    async function handleLogin(e) {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const { username, password } = Object.fromEntries(formData.entries());
+        const errorEl = document.getElementById('login-error');
+        errorEl.textContent = '';
+        try {
+            await api.post('/login', { username, password });
+            await checkAuthStatus();
+        } catch (error) {
+            errorEl.textContent = error.message;
+        }
+    }
+
+    async function handleLogout() {
+        try {
+            await api.post('/logout');
+        } catch (error) {
+            console.warn("Logout API call failed, but logging out client-side anyway.");
+        }
+        state.user = null;
+        navigate('login');
+    }
+
+    function handleNavClick(e) {
+        const button = e.target.closest('.nav-link');
+        if (!button) return;
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('bg-indigo-600', 'text-white');
+            link.classList.add('hover:bg-gray-200');
+        });
+        button.classList.add('bg-indigo-600', 'text-white');
+        button.classList.remove('hover:bg-gray-200');
+
+        const page = button.dataset.page;
+        if (page === 'jobs') renderJobsList();
+        if (page === 'users') renderUsersList();
+    }
+
+    function mainContentClickHandler(e) {
+        const target = e.target.closest('[data-action]');
+        if (!target) return;
+
+        const { action, id, page } = target.dataset;
+
+        switch (action) {
+            case 'create-job': showJobModal(); break;
+            case 'edit-job':
+                const jobToEdit = state.jobs.find(j => j.ID == id);
+                if(jobToEdit) showJobModal(jobToEdit);
+                break;
+            case 'delete-job':
+                if (confirm('Are you sure you want to delete this job?')) {
+                    api.delete(`/delete/job?id=${id}`).then(() => renderJobsList(state.pagination.current_page));
+                }
+                break;
+            case 'view-job': renderJobDetails(id); break;
+            case 'back-to-jobs': renderJobsList(1); break;
+            case 'register-user': showRegisterModal(); break;
+            case 'jobs-page-prev':
+            case 'jobs-page-next':
+                renderJobsList(parseInt(page));
+                break;
+        }
+    }
+
+    function showJobModal(job = null) {
+        const safeSchedule = job?.schedule || {};
+        const times = safeSchedule.times && safeSchedule.times.length > 0 ? safeSchedule.times : [{hour: 0, minute: 0}];
+
+        const timeInputsHtml = times.map((time, index) => `
+                <div class="flex items-center space-x-2 time-entry">
+                    <input type="number" name="hour" value="${time.hour}" min="0" max="23" class="w-full px-3 py-2 border rounded-md" placeholder="HH">
+                    <span class="font-bold">:</span>
+                    <input type="number" name="minute" value="${time.minute}" min="0" max="59" class="w-full px-3 py-2 border rounded-md" placeholder="MM">
+                    <button type="button" data-action="remove-time" class="px-3 py-1 text-sm font-semibold rounded-md bg-red-200 hover:bg-red-300 ${times.length > 1 ? '' : 'hidden'}">&times;</button>
+                </div>
+            `).join('');
+
+        modalContainer.innerHTML = `
+                <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl">
+                    <div class="flex justify-between items-center p-4 border-b">
+                        <h2 class="text-xl font-bold">${job ? 'Edit Job' : 'Create Job'}</h2>
+                        <button data-action="close-modal" class="p-2">&times;</button>
+                    </div>
+                    <form id="job-form" class="p-6 space-y-4">
+                        <input type="hidden" name="ID" value="${job?.ID || ''}">
+                        <div>
+                            <label class="block text-sm font-medium">Job Name</label>
+                            <input name="name" value="${job?.name || ''}" class="w-full px-3 py-2 border rounded-md" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium">Command</label>
+                            <input name="command" value="${job?.command || ''}" class="w-full px-3 py-2 border rounded-md" required>
+                        </div>
+                        <div class="p-4 border rounded-md space-y-4">
+                            <h3 class="font-semibold text-lg">Schedule</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium">Years (comma-sep)</label>
+                                    <input name="years" value="${safeSchedule.years?.join(', ') || ''}" class="w-full px-3 py-2 border rounded-md">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium">Months (1-12, comma-sep)</label>
+                                    <input name="months" value="${safeSchedule.months?.join(', ') || ''}" class="w-full px-3 py-2 border rounded-md">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium">Days of Month (1-31, comma-sep)</label>
+                                    <input name="daysOfMonth" value="${safeSchedule.daysOfMonth?.join(', ') || ''}" class="w-full px-3 py-2 border rounded-md">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium">Weekdays (0-6 Sun-Sat, comma-sep)</label>
+                                    <input name="weekdays" value="${safeSchedule.weekdays?.join(', ') || ''}" class="w-full px-3 py-2 border rounded-md">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Execution Times</label>
+                                <div id="time-inputs-container" class="space-y-2">${timeInputsHtml}</div>
+                                <button type="button" data-action="add-time" class="mt-2 px-3 py-1 text-sm font-semibold rounded-md bg-gray-200 hover:bg-gray-300">Add Time</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-end space-x-2">
+                             <button type="button" data-action="close-modal" class="px-4 py-2 rounded-md bg-gray-200">Cancel</button>
+                             <button type="submit" class="px-4 py-2 rounded-md bg-indigo-600 text-white">Save</button>
+                        </div>
+                    </form>
+                </div>
+            `;
+        modalContainer.classList.remove('hidden');
+        modalContainer.classList.add('flex');
+
+        document.getElementById('job-form').addEventListener('submit', handleJobFormSubmit);
+    }
+
+    async function handleJobFormSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
+
+        const parseNumbers = (str) => str.split(',').map(s => s.trim()).filter(Boolean).map(Number);
+
+        const times = [];
+        document.querySelectorAll('#time-inputs-container .time-entry').forEach(entry => {
+            const hour = parseInt(entry.querySelector('input[name="hour"]').value, 10);
+            const minute = parseInt(entry.querySelector('input[name="minute"]').value, 10);
+            if (!isNaN(hour) && !isNaN(minute)) {
+                times.push({ hour, minute });
+            }
+        });
+
+        const payload = {
+            ID: data.ID ? parseInt(data.ID) : undefined,
+            name: data.name,
+            command: data.command,
+            schedule: {
+                years: parseNumbers(data.years),
+                months: parseNumbers(data.months),
+                daysOfMonth: parseNumbers(data.daysOfMonth),
+                weekdays: parseNumbers(data.weekdays),
+                times: times,
+            }
+        };
+
+        try {
+            await (payload.ID ? api.put(`/update/job?id=${payload.ID}`, payload) : api.post('/create/job', payload));
+            closeModal();
+            renderJobsList(state.pagination.current_page || 1);
+        } catch(error) {
+            alert(`Error: ${error.message}`);
+        }
+    }
+
+    function handleModalClick(e){
+        const action = e.target.dataset.action;
+        if (action === 'add-time') {
+            const container = document.getElementById('time-inputs-container');
+            const newTimeEntry = document.createElement('div');
+            newTimeEntry.className = 'flex items-center space-x-2 time-entry';
+            newTimeEntry.innerHTML = `
+                    <input type="number" name="hour" value="0" min="0" max="23" class="w-full px-3 py-2 border rounded-md" placeholder="HH">
+                    <span class="font-bold">:</span>
+                    <input type="number" name="minute" value="0" min="0" max="59" class="w-full px-3 py-2 border rounded-md" placeholder="MM">
+                    <button type="button" data-action="remove-time" class="px-3 py-1 text-sm font-semibold rounded-md bg-red-200 hover:bg-red-300">&times;</button>
+                `;
+            container.appendChild(newTimeEntry);
+            // Show all remove buttons now that there is more than one
+            document.querySelectorAll('[data-action="remove-time"]').forEach(btn => btn.classList.remove('hidden'));
+        } else if (action === 'remove-time') {
+            e.target.closest('.time-entry').remove();
+            const remaining = document.querySelectorAll('#time-inputs-container .time-entry');
+            if(remaining.length === 1){
+                remaining[0].querySelector('[data-action="remove-time"]').classList.add('hidden');
+            }
+        }
+    }
+
+    function showRegisterModal() {
+        modalContainer.innerHTML = `
+                <div class="bg-white rounded-lg shadow-xl w-full max-w-md">
+                    <div class="flex justify-between items-center p-4 border-b">
+                        <h2 class="text-xl font-bold">Register New User</h2>
+                        <button data-action="close-modal" class="p-2">&times;</button>
+                    </div>
+                    <form id="register-form" class="p-6 space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium">Username</label>
+                            <input name="username" class="w-full px-3 py-2 border rounded-md" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium">Password</label>
+                            <input type="password" name="password" class="w-full px-3 py-2 border rounded-md" required>
+                        </div>
+                        <p id="register-error" class="text-red-500 text-sm h-4"></p>
+                        <div class="flex justify-end space-x-2">
+                             <button type="button" data-action="close-modal" class="px-4 py-2 rounded-md bg-gray-200">Cancel</button>
+                             <button type="submit" class="px-4 py-2 rounded-md bg-indigo-600 text-white">Register</button>
+                        </div>
+                    </form>
+                </div>
+            `;
+        modalContainer.classList.remove('hidden');
+        modalContainer.classList.add('flex');
+
+        document.getElementById('register-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const { username, password } = Object.fromEntries(formData.entries());
+            try {
+                await api.post('/register', { username, password });
+                closeModal();
+                renderUsersList();
+            } catch (error) {
+                document.getElementById('register-error').textContent = error.message;
+            }
+        });
+    }
+
+    function closeModal() {
+        modalContainer.classList.add('hidden');
+        modalContainer.classList.remove('flex');
+        modalContainer.innerHTML = '';
+    }
+
+    // --- INITIALIZATION ---
+    async function checkAuthStatus() {
+        try {
+            const data = await api.get('/profile');
+            if (data.success) {
+                state.user = data.data;
+                navigate('dashboard');
+            } else {
+                navigate('login');
+            }
+        } catch (error) {
+            navigate('login');
+        }
+    }
+
+    function init() {
+        checkAuthStatus();
+        document.body.addEventListener('click', (e) => {
+            const target = e.target.closest('[data-action]');
+            if(!target) return;
+
+            if(target.dataset.action === 'close-modal') {
+                closeModal();
+                return;
+            }
+
+            if (mainContent() && mainContent().contains(target)) {
+                mainContentClickHandler(e);
+            }
+
+            if (modalContainer && modalContainer.contains(target)) {
+                handleModalClick(e);
+            }
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

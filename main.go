@@ -57,10 +57,12 @@ func main() {
 
 	handlers.SeedAdminUser(db, adminCredential)
 
+	// Updated Session Configuration
 	store := session.New(session.Config{
 		Expiration:     24 * time.Hour,
 		CookieHTTPOnly: true,
-		CookieSameSite: "Lax",
+		CookieSameSite: "None", // Allow the browser to send cookies on cross-origin requests
+		CookieSecure:   false,  // Allow cookies over HTTP (for local development ONLY)
 	})
 
 	workerConfig, err := config.NewWorkerConfig()
@@ -74,9 +76,10 @@ func main() {
 
 	app := fiber.New()
 
-	// Add this CORS middleware to allow credentials from the frontend origin
 	app.Use(cors.New(cors.Config{
-		AllowOrigins:     "http://localhost:3001", // Or your frontend's actual origin
+		AllowOrigins:     "http://localhost:3000, http://127.0.0.1:3000",
+		AllowHeaders:     "Origin, Content-Type, Accept",    // Explicitly allow headers
+		AllowMethods:     "GET, POST, PUT, DELETE, OPTIONS", // Explicitly allow methods
 		AllowCredentials: true,
 	}))
 
