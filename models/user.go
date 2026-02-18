@@ -6,6 +6,7 @@ import "gorm.io/gorm"
 type User struct {
 	gorm.Model
 	Username     string `json:"username" gorm:"unique;not null"`
-	PasswordHash string `json:"-" gorm:"not null"` // The '-' json tag prevents this from ever being sent in a JSON response
+	PasswordHash string `json:"-" gorm:"not null"`
 	IsAdmin      bool   `json:"isAdmin" gorm:"not null"`
+	APIKey       string `gorm:"unique"`
 }

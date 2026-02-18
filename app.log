@@ -23488,3 +23488,934 @@
 {"time":"2025-06-22T20:51:03.702545797+04:00","level":"INFO","msg":"Found pending jobs","count":1}
 {"time":"2025-06-22T20:51:04.702361644+04:00","level":"INFO","msg":"Found pending jobs","count":1}
 {"time":"2025-06-22T20:51:05.702728465+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:15:44.6776523+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T20:15:44.687809756+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T20:15:44.723718924+04:00","level":"ERROR","msg":"Failed to get admin credential","!BADKEY":"open .env: no such file or directory"}
+{"time":"2026-02-18T20:15:52.219494042+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T20:15:52.224246557+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T20:15:52.225226534+04:00","level":"ERROR","msg":"Failed to get admin credential","!BADKEY":"open .env: no such file or directory"}
+{"time":"2026-02-18T20:17:54.777121843+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T20:17:54.78133911+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T20:17:54.782324728+04:00","level":"INFO","msg":"Admin user not found, creating one..."}
+{"time":"2026-02-18T20:17:54.834448562+04:00","level":"INFO","msg":"Admin user created successfully."}
+{"time":"2026-02-18T20:17:54.834568847+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T20:17:54.834590442+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T20:17:54.834597866+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T20:19:37.830880145+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T20:19:37.834897248+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T20:19:37.835834321+04:00","level":"INFO","msg":"Admin user not found, creating one..."}
+{"time":"2026-02-18T20:19:37.883162502+04:00","level":"ERROR","msg":"FATAL: Could not seed admin user: %v","!BADKEY":"constraint failed: UNIQUE constraint failed: users.username (2067)"}
+{"time":"2026-02-18T20:19:41.893732317+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T20:19:41.898048881+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T20:19:41.899227588+04:00","level":"INFO","msg":"Admin user not found, creating one..."}
+{"time":"2026-02-18T20:19:41.947678572+04:00","level":"ERROR","msg":"FATAL: Could not seed admin user: %v","!BADKEY":"constraint failed: UNIQUE constraint failed: users.username (2067)"}
+{"time":"2026-02-18T20:20:14.052252949+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T20:20:14.056788606+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T20:20:14.057653597+04:00","level":"ERROR","msg":"Failed to get admin credential","!BADKEY":"ADMIN_PASSWORD is not set"}
+{"time":"2026-02-18T20:20:28.387070947+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T20:20:28.391383362+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T20:20:28.39238186+04:00","level":"INFO","msg":"Admin user not found, creating one..."}
+{"time":"2026-02-18T20:20:28.448114298+04:00","level":"INFO","msg":"Admin user created successfully."}
+{"time":"2026-02-18T20:20:28.448197266+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T20:20:28.448213473+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T20:20:28.44821746+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T20:22:13.652064763+04:00","level":"INFO","msg":"created new job with id: 1"}
+{"time":"2026-02-18T20:22:14.448623883+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:15.448543782+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:16.448538788+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:17.448540313+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:18.448543954+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:19.449012108+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:20.449262538+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:21.448486312+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:22.448544575+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:23.448555008+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:24.44912237+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:25.448629927+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:26.448714972+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:27.448637873+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:28.448668454+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:29.44919371+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:30.448639412+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:31.448609102+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:32.448576109+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:33.448609055+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:34.448554947+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:35.448511423+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:36.448540059+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:37.448521487+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:38.448509025+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:39.448510836+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:40.448540473+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:41.448612273+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:42.44866639+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:43.448621849+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:44.448698966+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:45.448927321+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:46.448658738+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:47.448695066+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:48.448725738+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:49.448694602+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:50.448712698+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:51.448607353+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:52.448800706+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:53.4486502+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:54.448606881+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:55.448559624+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:56.448808812+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:57.448612329+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:58.448631973+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:22:59.448566541+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:00.448545171+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:01.448772779+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:02.448605141+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:03.448610155+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:04.448626733+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:05.448539413+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:06.448865185+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:07.448616992+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:08.448995772+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:09.448620901+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:10.448635477+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:11.448620897+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:12.448727357+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:13.448634616+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:14.448621414+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:15.448588631+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:16.448676293+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:17.448642664+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:18.44860294+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:19.448991016+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:20.449332486+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:21.448518461+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:21.485459139+04:00","level":"INFO","msg":"updated the job with id: 1"}
+{"time":"2026-02-18T20:23:22.44858738+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:23:22.448607432+04:00","level":"INFO","msg":"Job queued for execution","job_id":1}
+{"time":"2026-02-18T20:23:22.448617067+04:00","level":"INFO","msg":"Worker picked up a job","worker_id":2,"job_id":1}
+{"time":"2026-02-18T20:23:25.112310019+04:00","level":"INFO","msg":"Job execution succeeded","job_id":1,"output":"✅ Securely saved to KDE Wallet.\nEmail sent successfully!\n"}
+{"time":"2026-02-18T20:26:07.967400385+04:00","level":"INFO","msg":"created new job with id: 2"}
+{"time":"2026-02-18T20:26:08.448615415+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T20:26:08.448649411+04:00","level":"INFO","msg":"Job queued for execution","job_id":2}
+{"time":"2026-02-18T20:26:08.448657707+04:00","level":"INFO","msg":"Worker picked up a job","worker_id":4,"job_id":2}
+{"time":"2026-02-18T20:26:10.839733698+04:00","level":"INFO","msg":"Job execution succeeded","job_id":2,"output":"✅ Securely saved to KDE Wallet.\nEmail sent successfully!\n"}
+{"time":"2026-02-18T21:32:56.518669916+04:00","level":"INFO","msg":"created new job with id: 3"}
+{"time":"2026-02-18T21:32:57.448638819+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:32:57.448670958+04:00","level":"INFO","msg":"Job queued for execution","job_id":3}
+{"time":"2026-02-18T21:32:57.448681139+04:00","level":"INFO","msg":"Worker picked up a job","worker_id":3,"job_id":3}
+{"time":"2026-02-18T21:32:57.456494468+04:00","level":"INFO","msg":"Job execution succeeded","job_id":3,"output":"total 2460\ndrwxr-xr-x 13 sosotae sosotae    4096 Feb 18 21:32 .\ndrwxr-xr-x 46 sosotae sosotae    4096 Feb 18 20:14 ..\n-rw-r--r--  1 sosotae sosotae 2352787 Feb 18 21:32 app.log\ndrwxr-xr-x  2 sosotae sosotae    4096 Feb 18 20:14 config\n-rw-r--r--  1 sosotae sosotae   36864 Feb 18 21:32 dispatch.db\n-rw-r--r--  1 sosotae sosotae      26 Feb 18 20:20 .env\ndrwxr-xr-x  7 sosotae sosotae    4096 Feb 18 20:20 .git\n-rw-r--r--  1 sosotae sosotae     559 Feb 18 20:14 .gitignore\n-rw-r--r--  1 sosotae sosotae    1348 Feb 18 20:14 go.mod\n-rw-r--r--  1 sosotae sosotae    6253 Feb 18 20:14 go.sum\ndrwxr-xr-x  2 sosotae sosotae    4096 Feb 18 20:19 handlers\ndrwxr-xr-x  3 sosotae sosotae    4096 Feb 18 20:18 .idea\n-rw-r--r--  1 sosotae sosotae   35149 Feb 18 20:14 LICENSE\ndrwxr-xr-x  2 sosotae sosotae    4096 Feb 18 20:14 logger\n-rw-r--r--  1 sosotae sosotae    2849 Feb 18 20:37 main.go\ndrwxr-xr-x  2 sosotae sosotae    4096 Feb 18 20:14 models\ndrwxr-xr-x  2 sosotae sosotae    4096 Feb 18 20:14 public\n-rw-r--r--  1 sosotae sosotae    7622 Feb 18 20:14 readme.md\ndrwxr-xr-x  2 sosotae sosotae    4096 Feb 18 20:14 routes\ndrwxr-xr-x  2 sosotae sosotae    4096 Feb 18 20:14 scheduler\ndrwxr-xr-x  2 sosotae sosotae    4096 Feb 18 20:14 structs\ndrwxr-xr-x  2 sosotae sosotae    4096 Feb 18 20:14 worker\n"}
+{"time":"2026-02-18T21:38:37.996726204+04:00","level":"INFO","msg":"created new job with id: 4"}
+{"time":"2026-02-18T21:38:38.449455723+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:38:39.448550698+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:38:40.448537707+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:38:41.448544763+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:38:42.448610226+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:38:43.44859053+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:38:44.448656993+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:38:45.449284717+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:38:46.449467921+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:38:47.449389908+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:38:48.44948513+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:38:49.448542364+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:38:50.448551013+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:38:51.448534616+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:38:52.44854943+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:38:53.448578225+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:38:54.448603335+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:38:55.448541568+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:38:56.44855526+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:38:57.448559822+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T21:38:57.573749389+04:00","level":"INFO","msg":"deleted the job with id: 4"}
+{"time":"2026-02-18T21:53:00.212498993+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T21:53:00.216631078+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T21:53:00.217590443+04:00","level":"INFO","msg":"Admin user not found, creating one..."}
+{"time":"2026-02-18T21:53:00.264947001+04:00","level":"ERROR","msg":"FATAL: Could not seed admin user: %v","!BADKEY":"constraint failed: UNIQUE constraint failed: users.username (2067)"}
+{"time":"2026-02-18T21:53:31.599197061+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T21:53:31.602993687+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T21:53:31.603954636+04:00","level":"INFO","msg":"Admin user not found, creating one..."}
+{"time":"2026-02-18T21:53:31.662741857+04:00","level":"INFO","msg":"Admin user created successfully."}
+{"time":"2026-02-18T21:53:31.662804406+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T21:53:31.66281099+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T21:53:31.662813586+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T21:54:56.455794616+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T21:54:56.45956756+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T21:54:56.460510139+04:00","level":"INFO","msg":"Admin user not found, creating one..."}
+{"time":"2026-02-18T21:54:56.512090876+04:00","level":"INFO","msg":"Admin user created successfully."}
+{"time":"2026-02-18T21:54:56.512194922+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T21:54:56.512238623+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T21:54:56.512247014+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T21:55:19.950219015+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T21:55:19.954490445+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T21:55:19.955792054+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T21:55:19.955849069+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T21:55:19.955859982+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T21:55:19.955864595+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T21:55:25.417042344+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T21:55:25.420859247+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T21:55:25.44856396+04:00","level":"INFO","msg":"Admin user not found, creating one..."}
+{"time":"2026-02-18T21:55:25.500708386+04:00","level":"INFO","msg":"Admin user created successfully."}
+{"time":"2026-02-18T21:55:25.50077502+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T21:55:25.500781587+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T21:55:25.50078482+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T21:56:57.674044015+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T21:56:57.678336931+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T21:56:57.706094108+04:00","level":"INFO","msg":"Admin user not found, creating one..."}
+{"time":"2026-02-18T21:56:57.762104787+04:00","level":"INFO","msg":"Admin user created successfully."}
+{"time":"2026-02-18T21:56:57.762204317+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T21:56:57.762220093+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T21:56:57.762226902+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T21:58:36.350792969+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T21:58:36.354496964+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T21:58:36.355470338+04:00","level":"INFO","msg":"Admin user not found, creating one..."}
+{"time":"2026-02-18T21:58:36.402842412+04:00","level":"ERROR","msg":"FATAL: Could not seed admin user: %v","!BADKEY":"constraint failed: UNIQUE constraint failed: users.username (2067)"}
+{"time":"2026-02-18T22:00:00.545447588+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:00:00.549296499+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:00:00.573428389+04:00","level":"INFO","msg":"Admin user not found, creating one..."}
+{"time":"2026-02-18T22:00:00.627108846+04:00","level":"INFO","msg":"Admin user created successfully."}
+{"time":"2026-02-18T22:00:00.627168847+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:00:00.62717585+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:00:00.627178637+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:03:42.613539646+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:03:42.617027746+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:03:42.618018273+04:00","level":"INFO","msg":"Admin user not found, creating one..."}
+{"time":"2026-02-18T22:03:42.665320334+04:00","level":"ERROR","msg":"FATAL: Could not seed admin user: %v","!BADKEY":"constraint failed: UNIQUE constraint failed: users.username (2067)"}
+{"time":"2026-02-18T22:04:15.08918247+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:04:15.09582965+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:04:15.096851871+04:00","level":"INFO","msg":"Admin user not found, creating one..."}
+{"time":"2026-02-18T22:04:15.144064181+04:00","level":"ERROR","msg":"FATAL: Could not seed admin user: %v","!BADKEY":"constraint failed: UNIQUE constraint failed: users.username (2067)"}
+{"time":"2026-02-18T22:05:29.754151921+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:05:29.757755935+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:05:29.758695295+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T22:05:29.758736561+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:05:29.758745517+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:05:29.758748006+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:06:13.66193072+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:06:13.667515207+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:06:13.669256668+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T22:06:13.669328115+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:06:13.669370127+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:06:13.669379884+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:06:29.295049218+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:06:29.299168121+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:06:29.300153635+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T22:06:29.300203582+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:06:29.300222927+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:06:29.300225524+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:08:05.231617587+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:08:05.235741774+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:08:05.236720251+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T22:08:05.236763781+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:08:05.236771495+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:08:05.236774539+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:08:26.616406814+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:08:26.620615091+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:08:26.645301653+04:00","level":"INFO","msg":"Admin user not found, creating one..."}
+{"time":"2026-02-18T22:08:26.698347866+04:00","level":"INFO","msg":"Admin user created successfully."}
+{"time":"2026-02-18T22:08:26.698471804+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:08:26.698493549+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:08:26.698500666+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:09:36.331638099+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:09:36.339891846+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:09:36.342326876+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T22:09:36.342399911+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:09:36.342419939+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:09:36.342424312+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:10:36.075360379+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:10:36.079265141+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:10:36.080249639+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T22:10:36.08029353+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:10:36.080302403+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:10:36.080306644+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:11:31.387940821+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:11:31.391696637+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:11:31.392677127+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T22:11:31.392720094+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:11:31.39273274+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:11:31.392735246+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:13:03.309611985+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:13:03.313787223+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:13:03.314771196+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T22:13:03.314825712+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:13:03.314837756+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:13:03.314840618+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:16:49.016592855+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:16:49.020979085+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:16:49.02195479+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T22:16:49.021991489+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:16:49.021999766+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:16:49.022002289+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:21:52.434134563+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:21:52.438698317+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:21:52.439666525+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T22:21:52.439702773+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:21:52.439709205+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:21:52.439711761+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:25:06.447802321+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:25:06.451507547+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:25:06.452485766+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T22:25:06.452527211+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:25:06.452534052+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:25:06.452536698+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:25:59.309374745+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:25:59.313462086+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:25:59.31441201+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T22:25:59.314458278+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:25:59.314467403+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:25:59.314470154+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:26:02.765445858+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:26:02.776137707+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:26:02.778658488+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T22:26:02.778735693+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:26:02.778748427+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:26:02.778752599+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:26:38.97862371+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:26:38.99666265+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:26:38.999145864+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T22:26:38.999213046+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:26:38.999222627+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:26:38.999226345+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:29:18.638060134+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:29:18.641711743+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:29:18.642755196+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T22:29:18.642806054+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:29:18.64281352+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:29:18.64281717+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:29:32.542736239+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:29:32.546424176+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:29:32.547347244+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T22:29:32.547390711+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:29:32.547397889+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:29:32.547400561+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:31:19.882196553+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:31:19.88621583+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:31:19.887258979+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T22:31:19.887311761+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:31:19.887319265+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:31:19.887322024+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:36:03.671654535+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:36:03.67642154+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:36:03.677477546+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T22:36:03.677529598+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:36:03.677540861+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:36:03.67754366+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:36:26.970099008+04:00","level":"INFO","msg":"created new job with id: 1"}
+{"time":"2026-02-18T22:36:27.678263203+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:28.013238708+04:00","level":"INFO","msg":"created new job with id: 2"}
+{"time":"2026-02-18T22:36:28.024491956+04:00","level":"ERROR","msg":"Job execution failed","job_id":2,"error":"exit status 1","output":"✅ Securely saved to KDE Wallet.\nError: Error(\"missing field `sending_data`\", line: 1, column: 2)\n"}
+{"time":"2026-02-18T22:36:28.678565907+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:29.677888382+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:30.678073674+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:31.678828398+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:32.677868362+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:33.677862185+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:34.678740627+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:35.677846565+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:36.678755216+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:37.677777054+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:38.678705925+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:39.678803565+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:40.677928581+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:41.678745876+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:42.678804921+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:43.677911655+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:44.678753281+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:45.678776668+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:46.679019169+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:47.677920601+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:48.677746699+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:49.678840446+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:50.678025484+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:51.678757117+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:52.678711347+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:53.678749236+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:54.678700831+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:55.678843932+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:56.678738481+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:57.677897953+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:58.67788617+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:36:59.678447502+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:00.678587171+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:01.678809886+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:02.677950338+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:03.678732058+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:04.678764752+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:05.678764359+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:06.678703027+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:07.678189216+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:08.678382101+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:09.678676958+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:10.677900572+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:11.67876848+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:12.678769959+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:13.678772839+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:14.678858879+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:15.678771925+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:16.67869758+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:17.678555809+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:18.678672284+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:19.678815966+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:20.678778552+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:21.678585571+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:22.678775704+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:23.678762232+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:24.678444804+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:25.678633355+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:26.478430553+04:00","level":"INFO","msg":"deleted the job with id: 2"}
+{"time":"2026-02-18T22:37:26.678140327+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:27.678798139+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:28.572144418+04:00","level":"INFO","msg":"deleted the job with id: 1"}
+{"time":"2026-02-18T22:37:32.086554093+04:00","level":"INFO","msg":"created new job with id: 3"}
+{"time":"2026-02-18T22:37:32.678746472+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:32.85584549+04:00","level":"INFO","msg":"created new job with id: 4"}
+{"time":"2026-02-18T22:37:33.678663087+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:34.678572383+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:35.61650863+04:00","level":"INFO","msg":"Job execution succeeded","job_id":4,"output":"✅ Securely saved to KDE Wallet.\nEmail sent successfully!\n"}
+{"time":"2026-02-18T22:37:35.678830158+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:36.678823358+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:37.678339403+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:38.678511604+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:39.678573727+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:40.678640121+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:41.678596446+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:37:42.341166173+04:00","level":"INFO","msg":"deleted the job with id: 3"}
+{"time":"2026-02-18T22:37:59.718668746+04:00","level":"INFO","msg":"created new job with id: 5"}
+{"time":"2026-02-18T22:38:02.058025705+04:00","level":"INFO","msg":"Job execution succeeded","job_id":5,"output":"✅ Securely saved to KDE Wallet.\nEmail sent successfully!\n"}
+{"time":"2026-02-18T22:38:23.935858826+04:00","level":"INFO","msg":"deleted the job with id: 5"}
+{"time":"2026-02-18T22:38:25.109978754+04:00","level":"INFO","msg":"deleted the job with id: 4"}
+{"time":"2026-02-18T22:42:51.530757784+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:42:51.535092509+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:42:51.536062932+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T22:42:51.536100197+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:42:51.536113294+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:42:51.53611606+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:43:08.836895454+04:00","level":"INFO","msg":"created new job with id: 6"}
+{"time":"2026-02-18T22:43:09.536590446+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:43:10.536902358+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:43:11.536746307+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T22:43:11.641658146+04:00","level":"INFO","msg":"deleted the job with id: 6"}
+{"time":"2026-02-18T22:43:11.647846133+04:00","level":"INFO","msg":"created new job with id: 7"}
+{"time":"2026-02-18T22:43:13.633187243+04:00","level":"INFO","msg":"Job execution succeeded","job_id":7,"output":"✅ Securely saved to KDE Wallet.\nEmail sent successfully!\n"}
+{"time":"2026-02-18T22:43:19.598334526+04:00","level":"INFO","msg":"deleted the job with id: 7"}
+{"time":"2026-02-18T22:43:19.60408746+04:00","level":"INFO","msg":"created new job with id: 8"}
+{"time":"2026-02-18T22:43:22.492134307+04:00","level":"INFO","msg":"Job execution succeeded","job_id":8,"output":"✅ Securely saved to KDE Wallet.\nEmail sent successfully!\n"}
+{"time":"2026-02-18T22:46:09.932709235+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T22:46:09.93983827+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T22:46:09.941140837+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T22:46:09.941192952+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T22:46:09.941202604+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T22:46:09.941205333+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T22:46:19.561922642+04:00","level":"INFO","msg":"created new job with id: 9"}
+{"time":"2026-02-18T22:46:21.802875509+04:00","level":"INFO","msg":"Job execution succeeded","job_id":9,"output":"✅ Securely saved to KDE Wallet.\nEmail sent successfully!\n"}
+{"time":"2026-02-18T22:46:31.625061741+04:00","level":"INFO","msg":"created new job with id: 10"}
+{"time":"2026-02-18T22:46:33.677338912+04:00","level":"INFO","msg":"Job execution succeeded","job_id":10,"output":"✅ Securely saved to KDE Wallet.\nEmail sent successfully!\n"}
+{"time":"2026-02-18T22:47:44.298082169+04:00","level":"INFO","msg":"deleted the job with id: 8"}
+{"time":"2026-02-18T22:47:45.562710269+04:00","level":"INFO","msg":"deleted the job with id: 9"}
+{"time":"2026-02-18T22:47:46.674031614+04:00","level":"INFO","msg":"deleted the job with id: 10"}
+{"time":"2026-02-18T23:04:26.241820457+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T23:04:26.246248152+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T23:04:26.251592217+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T23:04:26.251633404+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T23:04:26.25165194+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T23:04:26.251654394+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T23:04:51.250187079+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T23:04:51.254121191+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T23:04:51.2651424+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T23:04:51.265193753+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T23:04:51.265202478+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T23:04:51.265210112+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T23:11:31.798611766+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T23:11:31.802639292+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T23:11:31.803603423+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T23:11:31.803645269+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T23:11:31.803659529+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T23:11:31.803662016+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T23:12:14.803547372+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T23:12:14.808234888+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T23:12:14.832863859+04:00","level":"INFO","msg":"Admin user not found, creating one..."}
+{"time":"2026-02-18T23:12:14.885269927+04:00","level":"INFO","msg":"Admin user created successfully."}
+{"time":"2026-02-18T23:12:14.885322118+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T23:12:14.885347746+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T23:12:14.885350873+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T23:13:15.520992841+04:00","level":"INFO","msg":"created new job with id: 1"}
+{"time":"2026-02-18T23:13:15.886549813+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:16.885994744+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:17.885986978+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:18.885821475+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:19.885876539+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:20.885851998+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:21.755203123+04:00","level":"INFO","msg":"created new job with id: 2"}
+{"time":"2026-02-18T23:13:21.886514429+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:22.885623499+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:23.885726237+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:24.211504966+04:00","level":"INFO","msg":"Job execution succeeded","job_id":2,"output":"✅ Securely saved to KDE Wallet.\nEmail sent successfully!\n"}
+{"time":"2026-02-18T23:13:24.88652108+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:25.885709605+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:26.885676359+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:27.885839826+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:28.886420727+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:29.885775762+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:30.886084665+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:31.885932822+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:32.886038615+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:33.885935995+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:34.885889687+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:35.886319888+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:36.886571867+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:37.885764937+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:38.886339416+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:39.885797033+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:40.885799735+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:41.885736197+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:42.885745934+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:43.885739206+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:44.885806835+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:45.885763682+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:46.886018549+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:47.886100378+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:48.885767181+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:49.885904041+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:50.88584535+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:51.886127692+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:52.885754655+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:53.885905035+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:54.885840152+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:55.885782163+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:13:56.249227687+04:00","level":"INFO","msg":"deleted the job with id: 1"}
+{"time":"2026-02-18T23:14:18.517007714+04:00","level":"INFO","msg":"created new job with id: 3"}
+{"time":"2026-02-18T23:14:20.883154204+04:00","level":"INFO","msg":"Job execution succeeded","job_id":3,"output":"✅ Securely saved to KDE Wallet.\nEmail sent successfully!\n"}
+{"time":"2026-02-18T23:25:08.129860347+04:00","level":"INFO","msg":"created new job with id: 4"}
+{"time":"2026-02-18T23:25:08.885623894+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:09.477203563+04:00","level":"INFO","msg":"created new job with id: 5"}
+{"time":"2026-02-18T23:25:09.478265044+04:00","level":"ERROR","msg":"Job execution failed","job_id":5,"error":"exit status 127","output":"sh: line 1: system_stats: command not found\n"}
+{"time":"2026-02-18T23:25:09.885658429+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:10.886423875+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:11.886550702+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:12.885792913+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:13.885864989+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:14.885616768+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:15.886666528+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:16.885657247+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:17.885964234+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:18.886667112+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:19.886641733+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:20.885604712+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:21.88561871+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:22.886591112+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:23.885550871+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:24.885557226+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:25.885625355+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:26.885771398+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:27.88568605+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:28.886116651+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:29.886432468+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:30.88664289+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:31.885713478+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:32.885669364+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:33.886680642+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:34.885613738+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:35.88568204+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:36.885774787+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:37.885759405+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:38.885681114+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:39.885669653+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:40.885923521+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:41.885718463+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:42.885629296+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:43.885625533+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:44.885857342+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:45.885681453+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:46.88663076+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:47.885637895+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:48.88578155+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:49.88569169+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:50.885644743+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:51.885622813+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:52.885751465+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:53.88600089+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:54.885632763+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:55.886162126+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:56.886527102+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:57.88643457+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:58.885695332+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:25:59.886029367+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:00.886383967+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:01.886537596+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:02.885604829+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:03.885700503+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:04.885606246+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:05.886073248+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:06.886571295+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:07.885637559+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:08.885597845+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:09.885642844+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:10.885640191+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:11.885786157+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:12.885664218+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:13.885637612+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:14.885629265+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:15.885659584+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:16.885681981+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:17.885701927+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:18.885693863+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:19.885717616+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:20.886631007+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:21.88558185+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:22.885938594+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:23.885692576+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:24.885625904+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:25.885594061+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:26.885628462+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:27.886583571+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:28.885608179+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:29.88658156+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:30.886632807+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:31.885657279+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:32.885618288+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:33.885644963+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:34.885559707+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:35.886562474+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:36.885563513+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:37.88555663+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:38.885560862+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:39.88555131+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:40.885616608+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:41.886630397+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:42.885651889+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:43.88554332+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:44.886596235+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:45.885600265+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:46.88667052+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:47.886573689+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:48.885667699+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:49.885610894+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:50.886627934+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:51.88567817+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:52.885672679+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:53.886679371+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:54.885656516+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:55.885651496+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:56.885648459+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:57.885623353+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:58.885804413+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:26:59.885591811+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:00.885893608+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:01.885571595+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:02.885553106+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:03.886597554+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:04.88557391+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:05.885552061+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:06.885595647+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:07.885547723+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:08.88559571+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:09.885729405+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:10.885580169+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:11.885564512+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:12.88558906+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:13.885571894+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:14.928999157+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T23:27:14.933008288+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T23:27:14.933960906+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T23:27:14.933998928+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T23:27:14.934008142+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T23:27:14.934010473+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T23:27:15.934769226+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:16.934548538+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:17.934932331+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:18.934432387+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:19.934500991+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:20.934742221+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:21.934947082+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:22.93494859+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:23.934903881+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:24.935035464+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:25.935198319+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:26.93425044+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:27.935152765+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:28.934514672+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:29.934928974+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:30.934238042+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:31.934969388+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:32.934491079+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:33.934412155+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:34.934879655+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:35.934877875+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:36.934909091+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:37.934961306+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:38.934847633+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:39.934987609+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:40.934851363+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:41.934922185+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:42.934289704+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:43.935038053+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:44.934854522+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:45.935035535+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:46.935216335+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:47.934860922+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:48.934954135+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:49.935038775+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:50.934954649+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:51.934879015+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:52.934861612+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:53.934880159+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:54.935145481+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:55.934555824+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:56.934680704+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:57.934786145+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:58.934807404+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:27:59.934924731+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:00.935051796+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:01.934306559+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:02.934929634+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:03.934968929+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:04.935066185+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:06.362460161+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T23:28:06.367461112+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T23:28:06.368777423+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T23:28:06.368825941+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T23:28:06.368840884+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T23:28:06.36884413+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T23:28:07.369118438+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:08.369572062+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:09.369221367+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:10.36949377+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:11.369528412+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:12.369635557+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:13.36968712+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:14.370113513+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:15.369191471+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:16.3693604+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:17.369611906+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:18.369606602+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:19.369642437+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:20.369981946+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:21.369373363+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:22.369647418+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:23.36930171+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:24.369900255+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:25.369309875+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:26.369354757+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:27.369321839+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:28.3698054+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:29.369213387+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:30.369401733+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:31.369311255+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:32.369462193+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:33.369242311+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:34.369260941+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:35.369504174+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:36.369656873+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:37.369106179+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:38.369178418+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:39.369235248+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:40.369314448+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:41.369217659+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:42.369334945+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:43.369364415+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:44.369255769+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:45.369247522+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:46.369352525+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:47.369590357+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:48.369572561+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:49.369605117+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:50.369398337+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:51.369161203+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:52.369205197+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:53.369217189+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:54.369312275+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:55.369193294+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:56.369222303+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:57.369794861+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:58.369258146+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:28:59.36907583+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:00.369164814+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:01.369086671+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:02.369296585+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:03.369169491+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:04.369121436+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:05.369234694+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:06.369192283+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:07.369594256+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:08.369614979+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:09.36958869+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:10.369631514+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:11.369594962+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:12.369622966+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:13.369857096+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:14.369116432+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:15.369150887+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:16.369222065+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:17.369595343+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:18.369800443+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:19.369220667+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:20.369221526+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:21.369452295+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:22.36958706+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:23.369792782+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:24.369586256+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:25.369630647+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:26.369587475+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:27.369293702+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:28.369105346+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:29.369177645+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:30.369209515+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:31.369196926+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:32.369551575+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:33.37012178+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:34.369189169+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:35.36921832+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:36.3693374+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:37.369230564+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:38.369199448+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:39.369198935+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:40.369484726+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:41.36933816+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:42.369378278+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:43.055874167+04:00","level":"INFO","msg":"created new job with id: 6"}
+{"time":"2026-02-18T23:29:43.057143239+04:00","level":"ERROR","msg":"Job execution failed","job_id":6,"error":"exit status 127","output":"sh: line 1: system_stats: command not found\n"}
+{"time":"2026-02-18T23:29:43.36978176+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:44.369694199+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:45.37001163+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:45.977071533+04:00","level":"INFO","msg":"deleted the job with id: 6"}
+{"time":"2026-02-18T23:29:46.369871001+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:47.36923204+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:47.833202398+04:00","level":"INFO","msg":"deleted the job with id: 5"}
+{"time":"2026-02-18T23:29:48.369655235+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:48.64557405+04:00","level":"INFO","msg":"created new job with id: 7"}
+{"time":"2026-02-18T23:29:48.646891331+04:00","level":"ERROR","msg":"Job execution failed","job_id":7,"error":"exit status 127","output":"sh: line 1: system_stats: command not found\n"}
+{"time":"2026-02-18T23:29:49.369989884+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:50.369558452+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:51.369413501+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:52.369616996+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:53.369574658+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:54.369550157+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:55.36960956+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:56.36960151+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:57.369596845+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:58.369578501+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:29:59.369579837+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:00.369630915+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:01.369593925+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:02.369589101+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:03.369126157+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:04.369188448+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:05.369129154+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:06.36923784+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:07.369783316+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:08.36988786+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:09.369656357+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:10.369641284+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:11.369635141+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:12.370002616+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:13.369625857+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:14.369677493+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:15.37010586+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:16.369493859+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:17.369688474+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:18.369113022+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:19.369311691+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:20.36928674+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:21.369224263+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:22.369254636+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:23.369198342+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:24.369372493+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:25.369099212+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:26.369933312+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:27.369183661+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:28.369107913+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:29.369155591+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:30.369323103+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:31.369303041+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:32.369329507+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:33.369632056+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:34.369654684+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:35.36962469+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:36.369618767+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:37.369606301+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:38.369616842+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:39.369935686+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:40.369585981+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:41.369623001+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:42.369582682+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:43.369611253+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:44.369592559+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:45.369605724+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:46.369616544+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:47.369067068+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:48.369086106+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:49.369642125+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:50.36923138+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:51.369166051+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:52.369191304+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:53.369253197+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:54.369183235+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:55.36925579+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:56.369146287+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:57.369665264+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:58.369618507+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:30:59.370017157+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:00.369379339+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:01.369628178+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:02.369599441+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:03.370101789+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:04.369295139+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:05.36946445+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:06.369213358+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:07.369641285+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:08.369660832+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:09.369790021+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:10.369126994+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:11.369122123+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:12.369378119+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:13.369479238+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:14.369705083+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:15.369633776+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:16.36963888+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:17.370037715+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:18.369134551+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:19.369196922+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:20.369423549+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:21.369630163+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:22.369901253+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:23.369247481+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:24.369422798+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:25.369626751+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:26.369592817+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:27.370062197+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:28.36910168+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:29.369110104+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:30.369157252+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:31.774963582+04:00","level":"INFO","msg":"Logger initialized successfully"}
+{"time":"2026-02-18T23:31:31.780491708+04:00","level":"INFO","msg":"Database connection successful using SQLite."}
+{"time":"2026-02-18T23:31:31.781462343+04:00","level":"INFO","msg":"Admin user already exists. Skipping seed."}
+{"time":"2026-02-18T23:31:31.781501922+04:00","level":"INFO","msg":"Job queue initialized","size":100}
+{"time":"2026-02-18T23:31:31.781508908+04:00","level":"INFO","msg":"Worker pool started","workers":5}
+{"time":"2026-02-18T23:31:31.781511001+04:00","level":"INFO","msg":"Scheduler started"}
+{"time":"2026-02-18T23:31:32.782688863+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:33.782541141+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:34.782804764+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:35.781789427+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:36.781920916+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:37.78226082+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:38.782475867+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:39.781839139+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:39.845345838+04:00","level":"INFO","msg":"created new job with id: 8"}
+{"time":"2026-02-18T23:31:40.14770669+04:00","level":"INFO","msg":"Job execution succeeded","job_id":8,"output":"\n─── NAOKO SYSTEM CORE ───\nCPU Load     : [█░░░░░░░░░░░░░░░░░░░] 7.9%\nMemory       : [█████████░░░░░░░░░░░] 47.0%\nOS           : Arch Linux\nKernel       : 6.18.9-arch1-2\nUptime       : 80 hours\n─────────────────────────\n\n"}
+{"time":"2026-02-18T23:31:40.782653188+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:41.78170742+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:42.781869331+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:43.781836714+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:44.781832092+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:45.781811123+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:46.781995831+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:47.781848155+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:48.781808166+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:49.781879386+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:50.781865536+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:51.78200673+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:52.781807707+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:53.781886163+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:54.7817616+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:55.782533077+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:56.78259282+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:57.101624951+04:00","level":"INFO","msg":"deleted the job with id: 7"}
+{"time":"2026-02-18T23:31:57.782739193+04:00","level":"INFO","msg":"Found pending jobs","count":1}
+{"time":"2026-02-18T23:31:58.677128868+04:00","level":"INFO","msg":"deleted the job with id: 4"}

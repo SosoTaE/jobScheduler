@@ -3,10 +3,11 @@ package config
 import (
 	"errors"
 	"fmt"
-	"github.com/joho/godotenv"
 	"jobScheduler/logger"
 	"os"
 	"strconv"
+
+	"github.com/joho/godotenv"
 )
 
 type AdminCredential struct {
@@ -21,9 +22,9 @@ func GetAdminCredential() (AdminCredential, error) {
 
 	adminCredential := AdminCredential{}
 
-	adminCredential.Username = os.Getenv("ADMIN_PASSWORD")
+	adminCredential.Username = os.Getenv("ADMIN_USER")
 	if adminCredential.Username == "" {
-		return adminCredential, errors.New("ADMIN_PASSWORD is not set")
+		return adminCredential, errors.New("ADMIN_USER is not set")
 	}
 
 	adminCredential.Password = os.Getenv("ADMIN_PASSWORD")

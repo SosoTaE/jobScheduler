@@ -5,15 +5,18 @@ import (
 	"jobScheduler/handlers"
 	"jobScheduler/logger"
 	"jobScheduler/models"
+	"jobScheduler/worker"
+
 	"time"
 
 	"github.com/gofiber/fiber/v2"
 	"gorm.io/gorm"
 )
 
-func CreateJob(db *gorm.DB) fiber.Handler {
+func Execute(db *gorm.DB) fiber.Handler {
 	return func(ctx *fiber.Ctx) error {
 		auth_ctx := ctx.Locals("auth_ctx").(handlers.AuthContext)
+
 		newJob := new(models.Job)
 
 		if err := ctx.BodyParser(newJob); err != nil {
@@ -32,16 +35,7 @@ func CreateJob(db *gorm.DB) fiber.Handler {
 			})
 		}
 
-		if err := newJob.Schedule.Validate(); err != nil {
-			logger.L.Error(err.Error())
-			return ctx.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-				"success": false,
-				"error":   err.Error(),
-			})
-		}
-
-		newJob.Status = "pending"
-		newJob.CreatedAt = time.Now()
+		newJob.Status = "running"
 		newJob.UserID = auth_ctx.UserID
 
 		result := db.Create(&newJob)
@@ -56,10 +50,32 @@ func CreateJob(db *gorm.DB) fiber.Handler {
 		message := fmt.Sprintf("created new job with id: %d", newJob.ID)
 		logger.L.Info(message)
 
-		return ctx.Status(fiber.StatusCreated).JSON(
-			fiber.Map{
-				"success": true,
-				"data":    newJob,
-			})
+		output, err := worker.ExecuteCommand(newJob.Command)
+		executionStatus := "succeeded"
+		if err != nil {
+			executionStatus = "failed"
+			logger.L.Error("Job execution failed", "job_id", newJob.ID, "error", err, "output", output)
+		} else {
+			logger.L.Info("Job execution succeeded", "job_id", newJob.ID, "output", output)
+		}
+
+		db.Model(&newJob).Update("status", executionStatus)
+
+		// Create the detailed execution record
+		executionRecord := models.JobExecution{
+			JobID:      newJob.ID,
+			Status:     executionStatus,
+			Output:     output,
+			FinishedAt: time.Now(),
+		}
+		if result := db.Create(&executionRecord); result.Error != nil {
+			logger.L.Error("Failed to save job execution history", "job_id", newJob.ID, "error", result.Error)
+		}
+
+		return ctx.Status(fiber.StatusOK).JSON(fiber.Map{
+			"success": true,
+			"job":     newJob,
+		})
+
 	}
 }

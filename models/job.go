@@ -79,6 +79,15 @@ type Job struct {
 	UserID    uint       `json:"userId"`
 }
 
+type ExecuteJob struct {
+	gorm.Model
+	Name      string     `json:"name" gorm:"not null"`
+	Command   string     `json:"command" gorm:"not null"`
+	Status    string     `json:"status" gorm:"default:'pending'"`
+	LastRunAt *time.Time `json:"lastRunAt,omitempty"`
+	UserID    uint       `json:"userId"`
+}
+
 type JobExecution struct {
 	gorm.Model
 	Status     string    `json:"status"` // e.g., "succeeded" or "failed"

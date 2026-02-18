@@ -2,12 +2,13 @@ package handlers
 
 import (
 	"errors"
+	"jobScheduler/models"
+	"jobScheduler/structs"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/session"
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
-	"jobScheduler/models"
-	"jobScheduler/structs"
 )
 
 func Login(db *gorm.DB, store *session.Store) fiber.Handler {
@@ -62,8 +63,27 @@ type AuthContext struct {
 }
 
 // AuthRequired now only needs the session store.
-func AuthRequired(store *session.Store) fiber.Handler {
+func AuthRequired(store *session.Store, db *gorm.DB) fiber.Handler {
 	return func(ctx *fiber.Ctx) error {
+		apiKey := ctx.Get("X-API-Key")
+		if apiKey != "" {
+			var user models.User
+			// Look up the user by their API Key
+			if err := db.Where("api_key = ?", apiKey).First(&user).Error; err == nil {
+				// Success! Set the context and move to the route
+				ctx.Locals("auth_ctx", AuthContext{
+					UserID:   user.ID,
+					Username: user.Username,
+				})
+				return ctx.Next()
+			}
+			// If an API key was sent but it's wrong, reject immediately
+			return ctx.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
+				"success": false,
+				"error":   "Invalid API Key",
+			})
+		}
+
 		sess, err := store.Get(ctx)
 		if err != nil {
 			return ctx.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
@@ -137,7 +157,7 @@ type RegistrationRequest struct {
 // Register is the handler for creating a new user account.
 func Register(db *gorm.DB) fiber.Handler {
 	return func(ctx *fiber.Ctx) error {
-		auth_ctx := ctx.Locals("auth_ctx").(*AuthContext)
+		auth_ctx := ctx.Locals("auth_ctx").(AuthContext)
 		if auth_ctx.IsAdmin != true {
 			return ctx.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
 				"success": false,

@@ -1,11 +1,6 @@
 package main
 
 import (
-	"github.com/glebarez/sqlite" // Pure Go SQLite driver
-	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/fiber/v2/middleware/cors"
-	"github.com/gofiber/fiber/v2/middleware/session"
-	"gorm.io/gorm"
 	"io"
 	"jobScheduler/config"
 	"jobScheduler/handlers"
@@ -16,6 +11,12 @@ import (
 	"log"
 	"os"
 	"time"
+
+	"github.com/glebarez/sqlite" // Pure Go SQLite driver
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/gofiber/fiber/v2/middleware/session"
+	"gorm.io/gorm"
 )
 
 func main() {
@@ -61,8 +62,8 @@ func main() {
 	store := session.New(session.Config{
 		Expiration:     24 * time.Hour,
 		CookieHTTPOnly: true,
-		CookieSameSite: "None", // Allow the browser to send cookies on cross-origin requests
-		CookieSecure:   false,  // Allow cookies over HTTP (for local development ONLY)
+		CookieSameSite: "Lax", // Better for local dev
+		CookieSecure:   false,
 	})
 
 	workerConfig, err := config.NewWorkerConfig()
@@ -77,33 +78,41 @@ func main() {
 	app := fiber.New()
 
 	app.Use(cors.New(cors.Config{
-		AllowOrigins:     "http://localhost:3000, http://127.0.0.1:3000",
-		AllowHeaders:     "Origin, Content-Type, Accept",    // Explicitly allow headers
-		AllowMethods:     "GET, POST, PUT, DELETE, OPTIONS", // Explicitly allow methods
+		AllowOriginsFunc: func(origin string) bool {
+			// This allows both localhost and 127.0.0.1 dynamically
+			return origin == "http://localhost:3000" || origin == "http://127.0.0.1:3000"
+		},
+		AllowHeaders:     "Origin, Content-Type, Accept, Authorization",
+		AllowMethods:     "GET, POST, PUT, DELETE, OPTIONS",
 		AllowCredentials: true,
 	}))
-
 	app.Static("/", "./public")
 
-	app.Post("/api/login", handlers.Login(db, store))
-	app.Post("/api/logout", handlers.Logout(store))
+	api := app.Group("/api")
 
-	app.Use(handlers.AuthRequired(store))
+	api.Post("/login", handlers.Login(db, store))
 
-	app.Post("/api/register", handlers.Register(db))
+	api.Use(handlers.AuthRequired(store, db))
 
-	app.Post("/api/create/job", routes.CreateJob(db))
-	app.Put("/api/update/job", routes.UpdateJob(db))
-	app.Delete("/api/delete/job", routes.DeleteJob(db))
+	api.Post("/logout", handlers.Logout(store))
 
-	app.Get("/api/jobs", routes.ListJobs(db))
-	app.Get("/api/job/:id", routes.GetJobDetails(db))
-	app.Get("/api/job/:id/history", routes.ListJobHistory(db))
-	app.Get("/api/executions", routes.ListAllExecutions(db))
+	api.Post("/register", handlers.Register(db))
 
-	app.Get("/api/profile", routes.Profile())
-	app.Get("/api/users", routes.ListUsers(db))
+	api.Post("/execute", routes.Execute(db))
+
+	api.Post("/create/job", routes.CreateJob(db))
+	api.Put("/update/job", routes.UpdateJob(db))
+	api.Delete("/delete/job", routes.DeleteJob(db))
+
+	api.Get("/jobs", routes.ListJobs(db))
+	api.Get("/job/:id", routes.GetJobDetails(db))
+	api.Get("/job/:id/history", routes.ListJobHistory(db))
+	api.Get("/executions", routes.ListAllExecutions(db))
+
+	api.Get("/profile", routes.Profile())
+	api.Get("/users", routes.ListUsers(db))
+
+	api.Post("/generate-api-key", routes.GenerateAPIKey(db))
 
 	app.Listen("0.0.0.0:3000")
-
 }

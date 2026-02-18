@@ -1,8 +1,9 @@
 package routes
 
 import (
-	"github.com/gofiber/fiber/v2"
 	"jobScheduler/handlers"
+
+	"github.com/gofiber/fiber/v2"
 )
 
 // Profile is a simple handler to demonstrate an authenticated route.

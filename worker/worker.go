@@ -5,7 +5,9 @@ import (
 	"jobScheduler/logger"
 	"jobScheduler/models"
 	"jobScheduler/scheduler"
+	"os"
 	"os/exec"
+	"path/filepath"
 	"strings"
 	"time"
 
@@ -34,7 +36,7 @@ func worker(id int, db *gorm.DB) {
 		// Update main job status to "running"
 		db.Model(&job).Updates(map[string]interface{}{"status": "running", "last_run_at": time.Now()})
 
-		output, err := executeCommand(job.Command)
+		output, err := ExecuteCommand(job.Command)
 
 		executionStatus := "succeeded"
 		if err != nil {
@@ -59,12 +61,30 @@ func worker(id int, db *gorm.DB) {
 	}
 }
 
-func executeCommand(command string) (string, error) {
+func ExecuteCommand(command string) (string, error) {
 	if strings.HasPrefix(command, "http") {
 		return fmt.Sprintf("Simulated HTTP GET to %s", command), nil
 	}
-	// #nosec G204
+
 	cmd := exec.Command("sh", "-c", command)
+
+	// 1. Get the current user's home directory dynamically
+	homeDir, err := os.UserHomeDir()
+	if err == nil {
+		// 2. Safely build the path: e.g., /home/username/.local/bin
+		localBin := filepath.Join(homeDir, ".local", "bin")
+
+		// 3. Prepend it to the existing system PATH
+		customPath := fmt.Sprintf("PATH=%s:%s", localBin, os.Getenv("PATH"))
+
+		// 4. Inject the new environment variables into the command
+		cmd.Env = append(os.Environ(), customPath)
+	} else {
+		// Fallback: If for some reason the OS doesn't know the home dir,
+		// just run it with the default environment variables.
+		fmt.Println("Warning: Could not determine home directory")
+	}
+
 	output, err := cmd.CombinedOutput()
 	return string(output), err
 }

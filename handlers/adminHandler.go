@@ -1,18 +1,18 @@
 package handlers
 
 import (
-	"golang.org/x/crypto/bcrypt"
-	"gorm.io/gorm"
 	"jobScheduler/config"
 	"jobScheduler/logger"
 	"jobScheduler/models"
 	"os"
+
+	"golang.org/x/crypto/bcrypt"
+	"gorm.io/gorm"
 )
 
 func SeedAdminUser(db *gorm.DB, adminCredential config.AdminCredential) {
 	var user models.User
-	// Check if a user with username "admin" already exists
-	err := db.First(&user, "username = ?", "admin").Error
+	err := db.First(&user, "username = ?", adminCredential.Username).Error
 	if err == nil {
 		// Admin user already exists
 		logger.L.Info("Admin user already exists. Skipping seed.")
